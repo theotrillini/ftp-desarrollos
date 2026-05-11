@@ -150,13 +150,24 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // --- Formulario ---
 document.getElementById('contactForm')?.addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
     const original = btn.textContent;
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-    setTimeout(() => {
+
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(() => {
         btn.textContent = '¡Consulta enviada!';
-        this.reset();
+        form.reset();
         setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3000);
-    }, 1200);
+    })
+    .catch(() => {
+        btn.textContent = 'Error al enviar. Intentá de nuevo.';
+        btn.disabled = false;
+    });
 });
