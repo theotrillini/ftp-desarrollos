@@ -715,7 +715,6 @@ button { font-family: 'Inter', sans-serif; }
     align-items: flex-start;
 }
 .ci-icon {
-    font-size: 18px;
     width: 42px;
     height: 42px;
     background: rgba(255,255,255,0.07);
@@ -724,6 +723,7 @@ button { font-family: 'Inter', sans-serif; }
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: rgba(255,255,255,0.85);
 }
 .ci-item div {
     display: flex;
