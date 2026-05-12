@@ -1047,6 +1047,19 @@ button { font-family: 'Inter', sans-serif; }
     position: absolute;
     top: 12px;
     left: 12px;
+    backdrop-filter: blur(4px);
+}
+.ufc-img .badge-disponible {
+    background: rgba(74, 92, 64, 0.85);
+    color: #fff;
+}
+.ufc-img .badge-desarrollo {
+    background: rgba(154, 112, 48, 0.85);
+    color: #fff;
+}
+.ufc-img .badge-vendida {
+    background: rgba(60, 60, 60, 0.75);
+    color: #fff;
 }
 
 .ufc-body {
