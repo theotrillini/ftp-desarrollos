@@ -26,7 +26,7 @@ const galleries = {
         'images/uf8/planoreal.png',
     ],
     uf4: [
-        'images/uf4/frente1.png',
+        'images/uf4/frente1.jpg',
         'images/uf4/livingcomedor1.png',
         'images/uf4/livingcomedor2.png',
         'images/uf4/cocina.png',
