@@ -15,13 +15,13 @@ const galleries = {
     ],
     uf7: [
         'images/uf7/frente%20L2%20Q2.png',
-        'images/uf7/planta%20baja%20L2%20Q2.png',
-        'images/uf7/planta%20alta%20L2Q2.png',
+        'images/uf7/Planta%20baja%20L2%20Q2.png',
+        'images/uf7/Planta%20alta%20L2%20Q2.png',
     ],
     uf8: [
-        'images/uf8/frente%20der%20L3%20Q2.png',
-        'images/uf8/frente%20izq%20L3%20Q2.png',
-        'images/uf8/frente%20der%20opc%20B%20L3%20Q2.png',
+        'images/uf8/frente.png',
+        'images/uf8/frente%20izq.png',
+        'images/uf8/frente%20con%20luz3.png',
         'images/uf8/plano%20superior%20L3%20Q2.png',
         'images/uf8/planoreal.png',
     ],
