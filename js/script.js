@@ -51,6 +51,17 @@ window.addEventListener('scroll', () => {
     if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.28}px)`;
 });
 
+// --- Hero slideshow ---
+const slides = document.querySelectorAll('.hero-slide');
+if (slides.length > 0) {
+    let current = 0;
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 5000);
+}
+
 // --- Hamburger ---
 document.getElementById('hamburger')?.addEventListener('click', () => {
     document.getElementById('navMenu').classList.toggle('open');
