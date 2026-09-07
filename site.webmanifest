@@ -1,0 +1,13 @@
+{
+  "name": "FTP Desarrollos",
+  "short_name": "FTP Desarrollos",
+  "description": "Desarrollos inmobiliarios en San Miguel, Buenos Aires.",
+  "icons": [
+    { "src": "android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#261A0C",
+  "background_color": "#F4EFE4",
+  "display": "standalone",
+  "start_url": "/"
+}

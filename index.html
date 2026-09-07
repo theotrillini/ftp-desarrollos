@@ -4,18 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTP Desarrollos | Desarrollos inmobiliarios</title>
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#261A0C">
+
     <meta name="description" content="Desarrollamos casas residenciales en San Miguel, Buenos Aires. Conocé Barrio Los Ginkgos, nuestro desarrollo en Muñiz con unidades disponibles.">
+    <link rel="canonical" href="https://ftpdesarrollos.com/">
     <meta property="og:title" content="FTP Desarrollos | Casas residenciales en San Miguel">
     <meta property="og:description" content="Desarrollamos casas residenciales en San Miguel, Buenos Aires. Conocé Barrio Los Ginkgos, nuestro desarrollo en Muñiz con unidades disponibles.">
-    <meta property="og:image" content="https://ftpdesarrollos.com/images/barrio/barrio1.png">
+    <meta property="og:image" content="https://ftpdesarrollos.com/images/barrio/barrio1-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://ftpdesarrollos.com">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
     <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preload" as="image" href="images/uf8/frente.webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "FTP Desarrollos",
+      "url": "https://ftpdesarrollos.com",
+      "logo": "https://ftpdesarrollos.com/apple-touch-icon.png",
+      "image": "https://ftpdesarrollos.com/images/barrio/barrio1-og.jpg",
+      "email": "ftpdesarrollos@gmail.com",
+      "telephone": "+5491159951188",
+      "sameAs": ["https://www.instagram.com/ftpdesarrollos/"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Paunero 1455",
+        "addressLocality": "San Miguel",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "San Miguel, Buenos Aires"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -31,7 +75,7 @@
                     <a href="#proyectos">Proyectos</a>
                     <a href="#nosotros">Nosotros</a>
                     <a href="#contacto">Contacto</a>
-                    <a href="https://wa.me/5491159951188" class="nav-wa" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." class="nav-wa" target="_blank">WhatsApp</a>
                 </div>
                 <button class="hamburger" id="hamburger" aria-label="Menú">
                     <span></span><span></span><span></span>
@@ -43,10 +87,10 @@
     <!-- HERO HOME -->
     <section class="hero hero-home" id="inicio">
         <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image:url('images/uf8/frente.png')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf10/casa%20afuera%201.png')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf4/frente1.jpeg')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf7/frente%20L2%20Q2.png')"></div>
+            <div class="hero-slide active" style="background-image:url('images/uf8/frente.webp')"></div>
+            <div class="hero-slide" style="background-image:url('images/uf10/casa%20afuera%201.webp')"></div>
+            <div class="hero-slide" style="background-image:url('images/uf4/frente1.webp')"></div>
+            <div class="hero-slide" style="background-image:url('images/uf7/frente%20L2%20Q2.webp')"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
@@ -70,20 +114,28 @@
     <section class="section-nosotros" id="nosotros">
         <div class="container">
             <div class="nosotros-grid fade-in">
-                <div>
-                    <span class="label">Quiénes somos</span>
-                    <h2>Construimos más<br>que <em>viviendas</em></h2>
-                    <p>En FTP Desarrollos trabajamos con honestidad, transparencia y compromiso en cada proyecto. Desarrollamos casas residenciales, donde cada detalle está pensado para mejorar la calidad de vida de las familias que los habitan.</p>
-                    <p>Nos especializamos en crear entornos que combinan arquitectura contemporánea con espacios verdes consolidados, ofreciendo privacidad y confort sin resignar ubicación ni infraestructura.</p>
-                </div>
-                <div class="nosotros-stats">
-<div class="stat-item">
-                        <span class="stat-num">100%</span>
-                        <span class="stat-label">Compromiso en cada entrega</span>
+                <div class="nosotros-media">
+                    <div class="nosotros-photo-placeholder">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Foto — próximamente</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-num">GBA</span>
-                        <span class="stat-label">Zona de desarrollo</span>
+                </div>
+                <div class="nosotros-body">
+                    <div>
+                        <span class="label">Quiénes somos</span>
+                        <h2>Construimos más<br>que <em>viviendas</em></h2>
+                        <p>En FTP Desarrollos trabajamos con honestidad, transparencia y compromiso en cada proyecto. Desarrollamos casas residenciales, donde cada detalle está pensado para mejorar la calidad de vida de las familias que los habitan.</p>
+                        <p>Nos especializamos en crear entornos que combinan arquitectura contemporánea con espacios verdes consolidados, ofreciendo privacidad y confort sin resignar ubicación ni infraestructura.</p>
+                    </div>
+                    <div class="nosotros-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Compromiso en cada entrega</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">GBA</span>
+                            <span class="stat-label">Zona de desarrollo</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,20 +153,21 @@
                 <!-- LOS GINKGOS -->
                 <a href="barrio-los-ginkgos.html" class="proyecto-card fade-in">
                     <div class="pc-image">
-                        <img src="images/barrio/barrio1.png" alt="Barrio Los Ginkgos">
+                        <img width="1434" height="1920" loading="lazy" src="images/barrio/barrio1.webp" alt="Barrio Los Ginkgos">
                         <div class="pc-overlay">
                             <span>Ver proyecto →</span>
                         </div>
                         <div class="pc-status-badge activo">Activo</div>
                     </div>
                     <div class="pc-info">
-                        <div class="pc-location">📍 Muñiz, San Miguel</div>
+                        <div class="pc-location"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Muñiz, San Miguel</div>
                         <h3>Barrio Los Ginkgos</h3>
-                        <p>Desarrollo residencial privado de 11 unidades en entorno arbolado. Viviendas contemporáneas sobre terrenos de 450 a 580 m².</p>
+                        <p>Desarrollo residencial privado de 11 unidades en entorno arbolado. Viviendas contemporáneas sobre terrenos de 450 a 620 m².</p>
                         <div class="pc-tags">
                             <span>1 unidad disponible</span>
                             <span>2 en desarrollo</span>
                         </div>
+                        <span class="btn-outline pc-cta">Ver proyecto →</span>
                     </div>
                 </a>
 
@@ -140,7 +193,7 @@
                             </div>
                             <div>
                                 <strong>WhatsApp</strong>
-                                <a href="https://wa.me/5491159951188" target="_blank">+54 9 11 5995-1188</a>
+                                <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." target="_blank">+54 9 11 5995-1188</a>
                             </div>
                         </div>
                         <div class="ci-item">
@@ -179,26 +232,29 @@
                     </div>
                 </div>
 
-                <form class="contact-form fade-in" id="contactForm" name="contacto-general" method="POST" netlify>
+                <form class="contact-form fade-in" id="contactForm" name="contacto-general" method="POST" netlify netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contacto-general">
+                    <p class="hp-field">
+                        <label>No completar este campo: <input name="bot-field"></label>
+                    </p>
                     <h3>Envianos tu consulta</h3>
                     <div class="fg">
-                        <label>Nombre completo</label>
-                        <input type="text" name="name" placeholder="Tu nombre" required>
+                        <label for="cg-name">Nombre completo</label>
+                        <input type="text" id="cg-name" name="name" placeholder="Tu nombre" required>
                     </div>
                     <div class="fg-row">
                         <div class="fg">
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="tu@email.com" required>
+                            <label for="cg-email">Email</label>
+                            <input type="email" id="cg-email" name="email" placeholder="tu@email.com" required>
                         </div>
                         <div class="fg">
-                            <label>Teléfono</label>
-                            <input type="tel" name="phone" placeholder="11 1234-5678">
+                            <label for="cg-phone">Teléfono</label>
+                            <input type="tel" id="cg-phone" name="phone" placeholder="11 1234-5678">
                         </div>
                     </div>
                     <div class="fg">
-                        <label>Proyecto de interés</label>
-                        <select name="project">
+                        <label for="cg-project">Proyecto de interés</label>
+                        <select id="cg-project" name="project">
                             <option value="">Seleccionar...</option>
                             <option value="ginkgos">Barrio Los Ginkgos</option>
                             <option value="proximo">Próximo proyecto</option>
@@ -206,8 +262,8 @@
                         </select>
                     </div>
                     <div class="fg">
-                        <label>Mensaje</label>
-                        <textarea name="message" rows="4" placeholder="Escribí tu consulta..."></textarea>
+                        <label for="cg-message">Mensaje</label>
+                        <textarea id="cg-message" name="message" rows="4" placeholder="Escribí tu consulta..."></textarea>
                     </div>
                     <button type="submit" class="btn-primary btn-block">Enviar Consulta</button>
                 </form>
@@ -227,24 +283,25 @@
                     <p>Construyendo hogares,<br>creando comunidades.</p>
                 </div>
                 <div class="footer-nav">
-                    <h5>Proyectos</h5>
+                    <p class="footer-heading">Proyectos</p>
                     <a href="barrio-los-ginkgos.html">Barrio Los Ginkgos</a>
                     <a href="#proyectos">Todos los proyectos</a>
                 </div>
                 <div class="footer-contact">
-                    <h5>Contacto</h5>
-                    <a href="https://wa.me/5491159951188" target="_blank">+54 9 11 5995-1188</a>
+                    <p class="footer-heading">Contacto</p>
+                    <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." target="_blank">+54 9 11 5995-1188</a>
                     <a href="mailto:ftpdesarrollos@gmail.com">ftpdesarrollos@gmail.com</a>
+                    <a href="https://www.instagram.com/ftpdesarrollos/" target="_blank" rel="noopener">Instagram</a>
                     <span>Paunero 1455, San Miguel</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 FTP Desarrollos. Todos los derechos reservados.</p>
+                <p>© 2025 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/5491159951188" class="wa-float" target="_blank" title="Consultanos por WhatsApp">
+    <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." class="wa-float" target="_blank" title="Consultanos por WhatsApp">
         <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
