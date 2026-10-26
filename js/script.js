@@ -95,6 +95,15 @@ function toggleUF(ufId, cardEl) {
     }
 }
 
+// --- Desde el estado de lotes: abre la ficha de la unidad ---
+function verUF(ufId) {
+    const card = document.getElementById('card-' + ufId);
+    const detail = document.getElementById('detail-' + ufId);
+    if (!card || !detail) return;
+    if (!detail.classList.contains('open')) toggleUF(ufId, card);
+    else detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 // --- Thumbnails (todas las galerías) ---
 document.querySelectorAll('.gthumb').forEach(thumb => {
     thumb.addEventListener('click', () => {

@@ -25,9 +25,10 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preload" as="image" href="images/barrio/barrio2.webp" fetchpriority="high">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
     <script type="application/ld+json">
@@ -80,6 +81,7 @@
                 <div class="nav-menu" id="navMenu">
                     <a href="index.html">Proyectos</a>
                     <a href="#barrio">El Barrio</a>
+                    <a href="#lotes">Lotes</a>
                     <a href="#unidades">Unidades</a>
                     <a href="#contacto">Contacto</a>
                     <a href="https://wa.me/5491159951188?text=Hola!%20Me%20interesa%20el%20Barrio%20Los%20Ginkgos.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="nav-wa" target="_blank">WhatsApp</a>
@@ -193,12 +195,45 @@
         </div>
     </section>
 
+    <!-- ESTADO DE LOS LOTES -->
+    <section class="section-lotes" id="lotes">
+        <div class="container">
+            <div class="lotes-head fade-in">
+                <div>
+                    <span class="label">Estado del barrio</span>
+                    <h2 class="section-title">Los 11 <em>lotes</em></h2>
+                </div>
+                <p>Así está hoy cada lote de Los Ginkgos. Tocá una casa para ver su ficha, fotos y planos. Precios a consulta.</p>
+            </div>
+            <ul class="lotes-legend fade-in" aria-label="Referencias">
+                <li><i class="st-disponible"></i>A la venta</li>
+                <li><i class="st-obra"></i>En obra</li>
+                <li><i class="st-proyecto"></i>En proyecto</li>
+                <li><i class="st-terreno"></i>Próximo proyecto</li>
+                <li><i class="st-vendido"></i>Vendido</li>
+            </ul>
+            <ol class="lotes-grid fade-in">
+                <li class="lote st-vendido"><span class="lote-n">01</span><b>Vendido</b><span>Terreno</span></li>
+                <li class="lote st-vendido"><span class="lote-n">02</span><b>Vendido</b><span>Terreno</span></li>
+                <li class="lote st-vendido"><span class="lote-n">03</span><b>Vendido</b><span>Terreno</span></li>
+                <li class="lote st-vendido has-uf"><button type="button" onclick="verUF('uf4')"><span class="lote-n">04</span><b>Vendido</b><span>Casa de 131 m²</span><em>Ver casa →</em></button></li>
+                <li class="lote st-disponible"><span class="lote-n">05</span><b>A la venta</b><span>Casa terminada · consultá</span></li>
+                <li class="lote st-terreno"><span class="lote-n">06</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
+                <li class="lote st-proyecto has-uf"><button type="button" onclick="verUF('uf7')"><span class="lote-n">07</span><b>En proyecto</b><span>Plano listo · próximo inicio</span><em>Ver proyecto →</em></button></li>
+                <li class="lote st-obra has-uf"><button type="button" onclick="verUF('uf8')"><span class="lote-n">08</span><b>En obra</b><span>80% de avance</span><span class="lote-bar" aria-label="80% de avance"><span style="width:80%"></span></span><em>Ver casa →</em></button></li>
+                <li class="lote st-terreno"><span class="lote-n">09</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
+                <li class="lote st-disponible has-uf"><button type="button" onclick="verUF('uf10')"><span class="lote-n">10</span><b>A la venta</b><span>Casa terminada · 122 m²</span><em>Ver casa →</em></button></li>
+                <li class="lote st-terreno"><span class="lote-n">11</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
+            </ol>
+        </div>
+    </section>
+
     <!-- UNIDADES -->
     <section class="section-unidades" id="unidades">
         <div class="container">
             <span class="label fade-in">Unidades</span>
             <h2 class="section-title fade-in">Elegí tu <em>vivienda</em></h2>
-            <p class="section-subtitle fade-in">El barrio cuenta con 11 unidades funcionales. Hacé clic en cada una para ver todos los detalles.</p>
+            <p class="section-subtitle fade-in">Estas son las casas que desarrollamos en el barrio. Hacé clic en cada una para ver fotos, planos y terminaciones.</p>
 
             <!-- GRILLA DE CARDS -->
             <div class="uf-cards-grid fade-in">
@@ -228,7 +263,7 @@
                     <div class="ufc-img">
                         <img width="1584" height="993" loading="lazy" src="images/uf7/frente%20L2%20Q2.webp" alt="UF7 - Render exterior">
                         <div class="ufc-img-overlay"></div>
-                        <span class="badge-desarrollo">En Desarrollo</span>
+                        <span class="badge-desarrollo">En proyecto</span>
                     </div>
                     <div class="ufc-body">
                         <div class="ufc-top">
@@ -247,7 +282,7 @@
                 <div class="ufc" id="card-uf8" onclick="toggleUF('uf8', this)">
                     <div class="ufc-img">
                         <img width="1591" height="989" loading="lazy" src="images/uf8/frente.webp" alt="UF8 - Render exterior">
-                        <span class="badge-desarrollo">En Desarrollo</span>
+                        <span class="badge-desarrollo">En obra · 80%</span>
                     </div>
                     <div class="ufc-body">
                         <div class="ufc-top">
@@ -349,7 +384,7 @@
                     <div class="uf-detail-inner">
                         <div class="ufd-header">
                             <div>
-                                <span class="badge-desarrollo">En Desarrollo</span>
+                                <span class="badge-desarrollo">En proyecto · próximo inicio</span>
                                 <h3>Unidad Funcional 7</h3>
                             </div>
                         </div>
@@ -398,7 +433,7 @@
                     <div class="uf-detail-inner">
                         <div class="ufd-header">
                             <div>
-                                <span class="badge-desarrollo">En Desarrollo</span>
+                                <span class="badge-desarrollo">En obra · 80% de avance</span>
                                 <h3>Unidad Funcional 8</h3>
                             </div>
                         </div>
@@ -577,8 +612,8 @@
                         <select id="cgk-unit" name="unit">
                             <option value="">Seleccionar...</option>
                             <option value="uf10">UF 10 — Disponible</option>
-                            <option value="uf7">UF 7 — En Desarrollo</option>
-                            <option value="uf8">UF 8 — En Desarrollo</option>
+                            <option value="uf7">UF 7 — En proyecto</option>
+                            <option value="uf8">UF 8 — En obra (80%)</option>
                             <option value="general">Consulta general</option>
                         </select>
                     </div>
@@ -619,7 +654,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
+                <p>© 2026 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
             </div>
         </div>
     </footer>

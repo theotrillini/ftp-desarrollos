@@ -24,10 +24,11 @@
     <meta property="og:locale" content="es_AR">
     <meta name="twitter:card" content="summary_large_image">
 
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="preload" as="image" href="images/uf8/frente.webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
     <script type="application/ld+json">
@@ -75,7 +76,7 @@
                     <a href="#proyectos">Proyectos</a>
                     <a href="#nosotros">Nosotros</a>
                     <a href="#contacto">Contacto</a>
-                    <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." class="nav-wa" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." class="nav-wa" target="_blank" rel="noopener">WhatsApp</a>
                 </div>
                 <button class="hamburger" id="hamburger" aria-label="Menú">
                     <span></span><span></span><span></span>
@@ -84,7 +85,7 @@
         </div>
     </nav>
 
-    <!-- HERO HOME -->
+    <!-- PORTADA -->
     <section class="hero hero-home" id="inicio">
         <div class="hero-slideshow">
             <div class="hero-slide active" style="background-image:url('images/uf8/frente.webp')"></div>
@@ -95,11 +96,11 @@
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="hero-tag">San Miguel · Buenos Aires · Argentina</span>
-                <h1 class="hero-title"><em>Espacios</em><br>para vivir</h1>
-                <p class="hero-sub">Desarrollamos viviendas de calidad en entornos naturales únicos, pensadas para familias que buscan una vida mejor.</p>
+                <span class="hero-tag">San Miguel · Buenos Aires</span>
+                <h1 class="hero-title">Espacios<br><em>para vivir</em></h1>
+                <p class="hero-sub">Desarrollamos viviendas de calidad en entornos naturales, pensadas para familias que buscan una vida mejor.</p>
                 <div class="hero-btns">
-                    <a href="#proyectos" class="btn-primary">Nuestros Proyectos</a>
+                    <a href="#proyectos" class="btn-primary">Ver proyectos</a>
                     <a href="#contacto" class="btn-ghost">Contactanos</a>
                 </div>
             </div>
@@ -110,68 +111,63 @@
         </div>
     </section>
 
-    <!-- NOSOTROS -->
-    <section class="section-nosotros" id="nosotros">
-        <div class="container">
-            <div class="nosotros-grid fade-in">
-                <div class="nosotros-media">
-                    <div class="nosotros-photo-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        <span>Foto — próximamente</span>
-                    </div>
-                </div>
-                <div class="nosotros-body">
-                    <div>
-                        <span class="label">Quiénes somos</span>
-                        <h2>Construimos más<br>que <em>viviendas</em></h2>
-                        <p>En FTP Desarrollos trabajamos con honestidad, transparencia y compromiso en cada proyecto. Desarrollamos casas residenciales, donde cada detalle está pensado para mejorar la calidad de vida de las familias que los habitan.</p>
-                        <p>Nos especializamos en crear entornos que combinan arquitectura contemporánea con espacios verdes consolidados, ofreciendo privacidad y confort sin resignar ubicación ni infraestructura.</p>
-                    </div>
-                    <div class="nosotros-stats">
-                        <div class="stat-item">
-                            <span class="stat-num">100%</span>
-                            <span class="stat-label">Compromiso en cada entrega</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num">GBA</span>
-                            <span class="stat-label">Zona de desarrollo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- PROYECTOS -->
     <section class="section-proyectos" id="proyectos">
         <div class="container">
-            <span class="label fade-in">Proyectos</span>
-            <h2 class="section-title fade-in">Nuestros <em>desarrollos</em></h2>
+            <div class="proyectos-head fade-in">
+                <div>
+                    <span class="label">Proyectos</span>
+                    <h2 class="section-title">Nuestros <em>desarrollos</em></h2>
+                </div>
+                <p>Casas contemporáneas en entornos arbolados, con la misma forma de construir en cada proyecto.</p>
+            </div>
 
             <div class="proyectos-grid">
+
 
                 <!-- LOS GINKGOS -->
                 <a href="barrio-los-ginkgos.html" class="proyecto-card fade-in">
                     <div class="pc-image">
-                        <img width="1434" height="1920" loading="lazy" src="images/barrio/barrio1.webp" alt="Barrio Los Ginkgos">
-                        <div class="pc-overlay">
-                            <span>Ver proyecto →</span>
-                        </div>
-                        <div class="pc-status-badge activo">Activo</div>
+                        <img width="1434" height="1920" loading="lazy" src="images/barrio/barrio1.webp" alt="Acceso arbolado de Barrio Los Ginkgos">
+                        <div class="pc-status-badge">Activo</div>
                     </div>
                     <div class="pc-info">
                         <div class="pc-location"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Muñiz, San Miguel</div>
                         <h3>Barrio Los Ginkgos</h3>
-                        <p>Desarrollo residencial privado de 11 unidades en entorno arbolado. Viviendas contemporáneas sobre terrenos de 450 a 620 m².</p>
-                        <div class="pc-tags">
-                            <span>1 unidad disponible</span>
-                            <span>2 en desarrollo</span>
+                        <p>Desarrollo residencial privado de 11 unidades en un entorno arbolado. Viviendas contemporáneas sobre terrenos de 450 a 620 m².</p>
+                        <div class="pc-facts">
+                            <div><b>11</b><span>Unidades</span></div>
+                            <div><b>450–620</b><span>m² de terreno</span></div>
+                            <div><b>2</b><span>A la venta</span></div>
                         </div>
-                        <span class="btn-outline pc-cta">Ver proyecto →</span>
+                        <span class="btn-outline pc-cta">Ver el barrio →</span>
                     </div>
                 </a>
 
+            </div>
+        </div>
+    </section>
 
+
+    <!-- NOSOTROS -->
+    <section class="section-nosotros" id="nosotros">
+        <div class="container">
+            <div class="nosotros-grid fade-in">
+                <figure class="nosotros-media">
+                    <img width="1434" height="1920" loading="lazy" src="images/barrio/barrio2.webp" alt="Arboleda de Barrio Los Ginkgos">
+                    <figcaption>Barrio Los Ginkgos · Muñiz</figcaption>
+                </figure>
+                <div class="nosotros-body">
+                    <span class="label">Quiénes somos</span>
+                    <h2>Construimos más<br>que <em>viviendas</em></h2>
+                    <p>En FTP Desarrollos trabajamos con honestidad, transparencia y compromiso en cada proyecto. Desarrollamos casas residenciales donde cada detalle está pensado para mejorar la calidad de vida de las familias que las habitan.</p>
+                    <p>Combinamos arquitectura contemporánea con espacios verdes consolidados, para ofrecer privacidad y confort sin resignar ubicación ni infraestructura.</p>
+                    <div class="nosotros-stats">
+                        <div class="stat-item"><span class="stat-num">11</span><span class="stat-label">Lotes en Ginkgos</span></div>
+                        <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Compromiso en cada entrega</span></div>
+                        <div class="stat-item"><span class="stat-num">GBA</span><span class="stat-label">Zona norte</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -296,7 +292,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
+                <p>© 2026 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
             </div>
         </div>
     </footer>
