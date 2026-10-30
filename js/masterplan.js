@@ -58,9 +58,10 @@
     const BANDA = { vendido: 'VENDIDO', venta: 'EN VENTA', proximo: 'PRÓXIMO' };
     const banda = (n, est, x1, y1, x2, y2) => {
         const pts = [rot(x1 + .45, y1 + .45), rot(x2 - .45, y2 - .45)];
-        const xr = Math.max(pts[0][0], pts[1][0]), yt = Math.min(pts[0][1], pts[1][1]), k = 5.2;
+        // en pantallas angostas el plano se achica: la banda va más grande para que se lea
+        const g = innerWidth < 600 ? 1.55 : 1, xr = Math.max(pts[0][0], pts[1][0]), yt = Math.min(pts[0][1], pts[1][1]), k = 5.2 * g;
         return `<clipPath id="mpc${n}"><polygon points="${poly(x1 + .45, y1 + .45, x2 - .45, y2 - .45)}"/></clipPath>` +
-            `<g class="mp-flag mp-flag-${est}" clip-path="url(#mpc${n})"><g transform="translate(${xr - k} ${yt + k}) rotate(45)">` +
+            `<g class="mp-flag mp-flag-${est}" clip-path="url(#mpc${n})"><g transform="translate(${xr - k} ${yt + k}) rotate(45) scale(${g})">` +
             `<rect x="-16" y="-1.9" width="32" height="3.8"/><text x="0" y=".75">${BANDA[est]}</text></g></g>`;
     };
 

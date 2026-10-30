@@ -152,7 +152,7 @@ button { font-family: inherit; }
 .navbar.scrolled .nav-menu a.nav-wa, .navbar.navbar-static .nav-menu a.nav-wa { border-color: var(--ink); color: var(--ink); }
 .navbar.scrolled .nav-menu a.nav-wa:hover, .navbar.navbar-static .nav-menu a.nav-wa:hover { background: var(--ink); color: var(--paper); }
 
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; padding: 10px; cursor: pointer; }
+.hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: none; border: 0; padding: 10px; min-width: 44px; min-height: 44px; cursor: pointer; }
 .hamburger span { width: 24px; height: 2px; background: #fff; transition: var(--ease); }
 .navbar.scrolled .hamburger span, .navbar.navbar-static .hamburger span { background: var(--ink); }
 
