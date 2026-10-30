@@ -8,9 +8,11 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#261A0C">
+    <meta name="theme-color" content="#121212">
 
     <meta name="description" content="Barrio Los Ginkgos, desarrollo residencial privado en Muñiz, San Miguel. 11 unidades con terrenos de 450 a 620 m². Consultá disponibilidad.">
     <link rel="canonical" href="https://ftpdesarrollos.com/barrio-los-ginkgos.html">
@@ -24,7 +26,7 @@
     <meta property="og:locale" content="es_AR">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preload" as="image" href="images/barrio/barrio2.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/barrio/aereo-hd.webp" fetchpriority="high">
     <script>document.documentElement.classList.add('js')</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +56,7 @@
       "@type": "RealEstateAgent",
       "name": "FTP Desarrollos",
       "url": "https://ftpdesarrollos.com",
-      "logo": "https://ftpdesarrollos.com/apple-touch-icon.png",
+      "logo": "https://ftpdesarrollos.com/android-chrome-512x512.png",
       "email": "ftpdesarrollos@gmail.com",
       "telephone": "+5491159951188",
       "sameAs": ["https://www.instagram.com/ftpdesarrollos/"],
@@ -75,7 +77,7 @@
         <div class="container">
             <div class="nav-content">
                 <a href="index.html" class="logo">
-                    <span class="logo-ftp">FTP</span>
+                    <span class="logo-mark" role="img" aria-label="FTP"></span>
                     <span class="logo-des">Desarrollos</span>
                 </a>
                 <div class="nav-menu" id="navMenu">
@@ -94,8 +96,8 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero" id="inicio">
-        <div class="hero-bg" style="background-image:url('images/barrio/barrio2.webp')"></div>
+    <section class="hero hero-aereo" id="inicio">
+        <div class="hero-bg" style="background-image:url('images/barrio/aereo-hd.webp')"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
@@ -203,28 +205,23 @@
                     <span class="label">Estado del barrio</span>
                     <h2 class="section-title">Los 11 <em>lotes</em></h2>
                 </div>
-                <p>Así está hoy cada lote de Los Ginkgos. Tocá una casa para ver su ficha, fotos y planos. Precios a consulta.</p>
+                <p>Los 11 lotes se ubican a los dos lados de una calle interna, con acceso desde Azcuénaga. Así está hoy cada uno. Precios a consulta.</p>
             </div>
             <ul class="lotes-legend fade-in" aria-label="Referencias">
                 <li><i class="st-disponible"></i>A la venta</li>
-                <li><i class="st-obra"></i>En obra</li>
-                <li><i class="st-proyecto"></i>En proyecto</li>
-                <li><i class="st-terreno"></i>Próximo proyecto</li>
+                                <li><i class="st-terreno"></i>Próximo proyecto</li>
                 <li><i class="st-vendido"></i>Vendido</li>
             </ul>
-            <ol class="lotes-grid fade-in">
-                <li class="lote st-vendido"><span class="lote-n">01</span><b>Vendido</b><span>Terreno</span></li>
-                <li class="lote st-vendido"><span class="lote-n">02</span><b>Vendido</b><span>Terreno</span></li>
-                <li class="lote st-vendido"><span class="lote-n">03</span><b>Vendido</b><span>Terreno</span></li>
-                <li class="lote st-vendido has-uf"><button type="button" onclick="verUF('uf4')"><span class="lote-n">04</span><b>Vendido</b><span>Casa de 131 m²</span><em>Ver casa →</em></button></li>
-                <li class="lote st-disponible"><span class="lote-n">05</span><b>A la venta</b><span>Casa terminada · consultá</span></li>
-                <li class="lote st-terreno"><span class="lote-n">06</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
-                <li class="lote st-proyecto has-uf"><button type="button" onclick="verUF('uf7')"><span class="lote-n">07</span><b>En proyecto</b><span>Plano listo · próximo inicio</span><em>Ver proyecto →</em></button></li>
-                <li class="lote st-obra has-uf"><button type="button" onclick="verUF('uf8')"><span class="lote-n">08</span><b>En obra</b><span>80% de avance</span><span class="lote-bar" aria-label="80% de avance"><span style="width:80%"></span></span><em>Ver casa →</em></button></li>
-                <li class="lote st-terreno"><span class="lote-n">09</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
-                <li class="lote st-disponible has-uf"><button type="button" onclick="verUF('uf10')"><span class="lote-n">10</span><b>A la venta</b><span>Casa terminada · 122 m²</span><em>Ver casa →</em></button></li>
-                <li class="lote st-terreno"><span class="lote-n">11</span><b>Próximo proyecto</b><span>Terreno · casa a construir</span></li>
-            </ol>
+            <div class="mp fade-in">
+                <div class="mp-sheet">
+                    <svg id="masterplan" role="img" aria-label="Plano del barrio Los Ginkgos visto desde arriba, con los 11 lotes y su estado"></svg>
+                </div>
+                <aside class="mp-side">
+                    <p class="plan-hint"><i></i>Tocá un lote para ver su estado</p>
+                    <div class="mp-card" id="mpCard" aria-live="polite"></div>
+                    <p class="note">Vista aérea ilustrativa del barrio. Los lotes se dibujan parejos; la superficie de cada ficha es la real.</p>
+                </aside>
+            </div>
         </div>
     </section>
 
@@ -233,302 +230,12 @@
         <div class="container">
             <span class="label fade-in">Unidades</span>
             <h2 class="section-title fade-in">Elegí tu <em>vivienda</em></h2>
-            <p class="section-subtitle fade-in">Estas son las casas que desarrollamos en el barrio. Hacé clic en cada una para ver fotos, planos y terminaciones.</p>
+            <p class="section-subtitle fade-in">Estas son las casas que desarrollamos en el barrio. Hacé clic en cada una para ver fotos y terminaciones.</p>
 
             <!-- GRILLA DE CARDS -->
-            <div class="uf-cards-grid fade-in">
-
-                <!-- UF10 -->
-                <div class="ufc" id="card-uf10" onclick="toggleUF('uf10', this)">
-                    <div class="ufc-img">
-                        <img width="1920" height="1434" loading="lazy" src="images/uf10/casa%20afuera%201.webp" alt="UF10 - Fachada">
-                        <span class="badge-disponible">Disponible</span>
-                    </div>
-                    <div class="ufc-body">
-                        <div class="ufc-top">
-                            <h3>UF 10</h3>
-                        </div>
-                        <div class="ufc-specs-row">
-                            <span>122 m²</span>
-                            <span>580 m² terreno</span>
-                            <span>2 dorm.</span>
-                            <span>Cochera</span>
-                        </div>
-                        <div class="ufc-toggle">Ver detalles <span class="ufc-arrow">↓</span></div>
-                    </div>
-                </div>
-
-                <!-- UF7 -->
-                <div class="ufc" id="card-uf7" onclick="toggleUF('uf7', this)">
-                    <div class="ufc-img">
-                        <img width="1584" height="993" loading="lazy" src="images/uf7/frente%20L2%20Q2.webp" alt="UF7 - Render exterior">
-                        <div class="ufc-img-overlay"></div>
-                        <span class="badge-desarrollo">En proyecto</span>
-                    </div>
-                    <div class="ufc-body">
-                        <div class="ufc-top">
-                            <h3>UF 7</h3>
-                        </div>
-                        <div class="ufc-specs-row">
-                            <span>2 Niveles</span>
-                            <span>Doble altura</span>
-                            <span>Terraza</span>
-                        </div>
-                        <div class="ufc-toggle">Ver detalles <span class="ufc-arrow">↓</span></div>
-                    </div>
-                </div>
-
-                <!-- UF8 -->
-                <div class="ufc" id="card-uf8" onclick="toggleUF('uf8', this)">
-                    <div class="ufc-img">
-                        <img width="1591" height="989" loading="lazy" src="images/uf8/frente.webp" alt="UF8 - Render exterior">
-                        <span class="badge-desarrollo">En obra · 80%</span>
-                    </div>
-                    <div class="ufc-body">
-                        <div class="ufc-top">
-                            <h3>UF 8</h3>
-                        </div>
-                        <div class="ufc-specs-row">
-                            <span>~100 m²</span>
-                            <span>450 m² terreno</span>
-                            <span>Suite</span>
-                        </div>
-                        <div class="ufc-toggle">Ver detalles <span class="ufc-arrow">↓</span></div>
-                    </div>
-                </div>
-
-                <!-- UF4 VENDIDA -->
-                <div class="ufc ufc-vendida" id="card-uf4" onclick="toggleUF('uf4', this)">
-                    <div class="ufc-img">
-                        <img width="1148" height="1600" loading="lazy" src="images/uf4/frente1.webp" alt="UF4 - Vendida">
-                        <span class="badge-vendida">Vendida</span>
-                    </div>
-                    <div class="ufc-body">
-                        <div class="ufc-top">
-                            <h3>UF 4</h3>
-                        </div>
-                        <div class="ufc-specs-row">
-                            <span>131 m²</span>
-                            <span>3 dorm.</span>
-                            <span>4 cocheras</span>
-                        </div>
-                        <div class="ufc-toggle">Ver detalles <span class="ufc-arrow">↓</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- PANELES DE DETALLE -->
-            <div class="uf-detail-wrap">
-
-                <!-- DETALLE UF10 -->
-                <div class="uf-detail" id="detail-uf10">
-                    <div class="uf-detail-inner">
-                        <div class="ufd-header">
-                            <div>
-                                <span class="badge-disponible">Disponible</span>
-                                <h3>Unidad Funcional 10</h3>
-                            </div>
-                        </div>
-                        <div class="ufd-body">
-                            <div class="uf-gallery">
-                                <div class="gallery-main" id="galleryMain" data-gal="uf10" onclick="openLightboxGal('uf10', currentIndex)">
-                                    <img width="1920" height="1434" loading="lazy" src="images/uf10/casa%20afuera%201.webp" alt="UF10 Fachada" id="mainImg-uf10">
-                                    <div class="gallery-zoom-hint"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Clic para ampliar</div>
-                                </div>
-                                <div class="gallery-strip">
-                                    <img width="1920" height="1434" loading="lazy" src="images/uf10/casa%20afuera%201.webp"                class="gthumb active" data-gal="uf10" data-i="0" alt="Fachada">
-                                    <img width="1920" height="1434" loading="lazy" src="images/uf10/casa%20afuera%20lateral.webp"          class="gthumb"        data-gal="uf10" data-i="1" alt="Exterior">
-                                    <img width="1920" height="1434" loading="lazy" src="images/uf10/cocina%201.webp"                       class="gthumb"        data-gal="uf10" data-i="2" alt="Cocina">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/cocina%202.webp"                       class="gthumb"        data-gal="uf10" data-i="3" alt="Interior">
-                                    <img width="1920" height="1434" loading="lazy" src="images/uf10/living%201.webp"                       class="gthumb"        data-gal="uf10" data-i="4" alt="Living">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/patio%20atras%20L5%20-%20Editado.webp" class="gthumb"        data-gal="uf10" data-i="5" alt="Patio">
-                                    <img width="1549" height="1920" loading="lazy" src="images/uf10/pieza%20principal.webp"                class="gthumb"        data-gal="uf10" data-i="6" alt="Dormitorio">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/cuarto%20ppal%202.webp"                class="gthumb"        data-gal="uf10" data-i="7" alt="Dorm. principal">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/cuarto%20ppal%202%3D1.webp"            class="gthumb"        data-gal="uf10" data-i="8" alt="Escritorio">
-                                    <img width="864" height="1184" loading="lazy" src="images/uf10/banio1.webp"                           class="gthumb"        data-gal="uf10" data-i="9" alt="Baño">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/banio2.webp"                           class="gthumb"        data-gal="uf10" data-i="10" alt="Baño vanitory">
-                                    <img width="1434" height="1920" loading="lazy" src="images/uf10/banio3.webp"                           class="gthumb"        data-gal="uf10" data-i="11" alt="Baño completo">
-                                </div>
-                            </div>
-                            <div class="ufd-info">
-                                <div class="uf-specs">
-                                    <div class="spec"><span class="sv">122 m²</span><span class="sl">Construcción</span></div>
-                                    <div class="spec"><span class="sv">580 m²</span><span class="sl">Terreno</span></div>
-                                    <div class="spec"><span class="sv">2</span><span class="sl">Dormitorios</span></div>
-                                    <div class="spec"><span class="sv">1</span><span class="sl">Cochera</span></div>
-                                </div>
-                                <div class="uf-desc">
-                                    <p>El ingreso se destaca por su <strong>palier de recepción</strong> y una imponente puerta de madera que anticipa la calidad del proyecto. El living-comedor es amplio y cuenta con ventanales de aluminio negro A30 con DVH, garantizando excelente aislamiento térmico y acústico.</p>
-                                    <p>La <strong>cocina-comedor diario</strong> combina funcionalidad y estética: muebles bajo mesada en tono paraíso, mesadas de cuarzo blanco y revestimiento tipo subway blanco. Equipada con horno eléctrico embutido, anafe vitrocerámico y bacha Johnson de acero.</p>
-                                    <p>El <strong>baño principal</strong> incorpora antebaño, vanitory flotante en verde jade, mesada de cuarzo blanco y grifería de diseño con detalles en negro. Un segundo dormitorio versátil y toilette de cortesía completan el área privada.</p>
-                                </div>
-                                <div class="uf-tags">
-                                    <span>✓ Patio</span>
-                                    <span>✓ Quincho</span>
-                                    <span>✓ Ventanales DVH</span>
-                                    <span>✓ Cocina equipada</span>
-                                    <span>✓ A estrenar</span>
-                                    <span>✓ 100% terminada</span>
-                                </div>
-                                <a href="https://wa.me/5491159951188?text=Hola!%20Me%20interesa%20la%20UF10%20del%20Barrio%20Los%20Ginkgos.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary btn-block" target="_blank">
-                                    Consultar por WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DETALLE UF7 -->
-                <div class="uf-detail" id="detail-uf7">
-                    <div class="uf-detail-inner">
-                        <div class="ufd-header">
-                            <div>
-                                <span class="badge-desarrollo">En proyecto · próximo inicio</span>
-                                <h3>Unidad Funcional 7</h3>
-                            </div>
-                        </div>
-                        <div class="ufd-body">
-                            <div class="uf-gallery">
-                                <div class="gallery-main" data-gal="uf7" onclick="openLightboxGal('uf7', currentIndex)">
-                                    <img width="1584" height="993" loading="lazy" src="images/uf7/frente%20L2%20Q2.webp" alt="UF7 Render exterior" id="mainImg-uf7">
-                                    <div class="gallery-zoom-hint"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Clic para ampliar</div>
-                                </div>
-                                <div class="gallery-strip">
-                                    <img width="1584" height="993" loading="lazy" src="images/uf7/frente%20L2%20Q2.webp"        class="gthumb active" data-gal="uf7" data-i="0" alt="Render exterior">
-                                    <img width="1451" height="1084" loading="lazy" src="images/uf7/Planta%20baja%20L2%20Q2.webp" class="gthumb"        data-gal="uf7" data-i="1" alt="Planta baja">
-                                    <img width="1456" height="1080" loading="lazy" src="images/uf7/Planta%20alta%20L2%20Q2.webp" class="gthumb"        data-gal="uf7" data-i="2" alt="Planta alta">
-                                </div>
-                            </div>
-                            <div class="ufd-info">
-                                <div class="uf-specs">
-                                    <div class="spec"><span class="sv">2</span><span class="sl">Niveles</span></div>
-                                    <div class="spec"><span class="sv">2</span><span class="sl">Doble altura</span></div>
-                                    <div class="spec"><span class="sv">1</span><span class="sl">Dormitorio</span></div>
-                                    <div class="spec"><span class="sv">1</span><span class="sl">Terraza</span></div>
-                                </div>
-                                <div class="uf-desc">
-                                    <p>Vivienda contemporánea desarrollada en <strong>dos plantas</strong>, con un marcado sector social en doble altura y amplia terraza que amplía las posibilidades de uso y expansión.</p>
-                                    <p>En planta baja, el estar-comedor se organiza en un espacio amplio con visuales abiertas y <strong>conexión directa con la cocina</strong>. La cocina, de generosas dimensiones, se complementa con despensa y toilette de recepción.</p>
-                                    <p>El gran protagonista es el sector en <strong>doble altura</strong>, que potencia la sensación de amplitud y luminosidad natural. En planta alta se desarrolla el dormitorio principal con baño completo y circulación abierta con visuales hacia el estar.</p>
-                                    <p>La <strong>amplia terraza</strong> es ideal como expansión exterior, espacio social al aire libre o futura área de recreación. El proyecto admite personalización según requerimientos del comprador.</p>
-                                </div>
-                                <div class="uf-tags">
-                                    <span>✓ Doble altura</span>
-                                    <span>✓ Terraza amplia</span>
-                                    <span>✓ Cocina con despensa</span>
-                                    <span>✓ Toilette en PB</span>
-                                    <span>✓ Personalizable</span>
-                                </div>
-                                <a href="https://wa.me/5491159951188?text=Hola!%20Me%20interesa%20la%20UF7%20del%20Barrio%20Los%20Ginkgos.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary btn-block" target="_blank">
-                                    Consultar por WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DETALLE UF8 -->
-                <div class="uf-detail" id="detail-uf8">
-                    <div class="uf-detail-inner">
-                        <div class="ufd-header">
-                            <div>
-                                <span class="badge-desarrollo">En obra · 80% de avance</span>
-                                <h3>Unidad Funcional 8</h3>
-                            </div>
-                        </div>
-                        <div class="ufd-body">
-                            <div class="uf-gallery">
-                                <div class="gallery-main" data-gal="uf8" onclick="openLightboxGal('uf8', currentIndex)">
-                                    <img width="1591" height="989" loading="lazy" src="images/uf8/frente.webp" alt="UF8 Render frente" id="mainImg-uf8">
-                                    <div class="gallery-zoom-hint"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Clic para ampliar</div>
-                                </div>
-                                <div class="gallery-strip">
-                                    <img width="1591" height="989" loading="lazy" src="images/uf8/frente.webp"                      class="gthumb active" data-gal="uf8" data-i="0" alt="Frente">
-                                    <img width="1591" height="989" loading="lazy" src="images/uf8/frente%20izq.webp"                class="gthumb"        data-gal="uf8" data-i="1" alt="Frente izquierdo">
-                                    <img width="1090" height="627" loading="lazy" src="images/uf8/frente%20con%20luz3.webp"         class="gthumb"        data-gal="uf8" data-i="2" alt="Frente con luz">
-                                    <img width="1050" height="1498" loading="lazy" src="images/uf8/plano%20superior%20L3%20Q2.webp"  class="gthumb"        data-gal="uf8" data-i="3" alt="Plano superior">
-                                    <img width="1063" height="735" loading="lazy" src="images/uf8/planoreal.webp"                   class="gthumb"        data-gal="uf8" data-i="4" alt="Plano real">
-                                </div>
-                            </div>
-                            <div class="ufd-info">
-                                <div class="uf-specs">
-                                    <div class="spec"><span class="sv">~100 m²</span><span class="sl">Construcción</span></div>
-                                    <div class="spec"><span class="sv">450 m²</span><span class="sl">Terreno</span></div>
-                                    <div class="spec"><span class="sv">2</span><span class="sl">Dormitorios</span></div>
-                                    <div class="spec"><span class="sv">Suite</span><span class="sl">Dorm. principal</span></div>
-                                </div>
-                                <div class="uf-desc">
-                                    <p>Vivienda de ~100 m² con especial énfasis en la <strong>amplitud espacial</strong>, la luminosidad y la calidad constructiva. El ingreso conduce hacia un living-comedor en doble altura que jerarquiza el espacio social.</p>
-                                    <p>La <strong>cocina-comedor</strong> contará con isla central, integrando funcionalidad y diseño en un espacio dinámico y moderno. Aberturas de aluminio negro A30 con DVH en toda la vivienda.</p>
-                                    <p>El área privada incluye <strong>dormitorio principal en suite</strong> con vestidor y baño propio, y un dormitorio secundario. El amplio jardín posterior tiene potencial para galería, expansión o futura piscina.</p>
-                                </div>
-                                <div class="uf-tags">
-                                    <span>✓ Doble altura</span>
-                                    <span>✓ Cocina con isla</span>
-                                    <span>✓ Suite con vestidor</span>
-                                    <span>✓ DVH aluminio negro</span>
-                                    <span>✓ Jardín posterior</span>
-                                </div>
-                                <a href="https://wa.me/5491159951188?text=Hola!%20Me%20interesa%20la%20UF8%20del%20Barrio%20Los%20Ginkgos.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary btn-block" target="_blank">
-                                    Consultar por WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DETALLE UF4 -->
-                <div class="uf-detail" id="detail-uf4">
-                    <div class="uf-detail-inner ufd-vendida">
-                        <div class="ufd-header">
-                            <div>
-                                <span class="badge-vendida">Vendida</span>
-                                <h3>Unidad Funcional 4</h3>
-                            </div>
-                        </div>
-                        <div class="ufd-body">
-                            <div class="uf-gallery">
-                                <div class="gallery-main" data-gal="uf4" onclick="openLightboxGal('uf4', currentIndex)">
-                                    <img width="1148" height="1600" loading="lazy" src="images/uf4/frente1.webp" alt="UF4 Fachada" id="mainImg-uf4">
-                                    <div class="gallery-zoom-hint"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Clic para ampliar</div>
-                                </div>
-                                <div class="gallery-strip">
-                                    <img width="1148" height="1600" loading="lazy" src="images/uf4/frente1.webp"         class="gthumb active" data-gal="uf4" data-i="0" alt="Fachada">
-                                    <img width="565" height="589" loading="lazy" src="images/uf4/livingcomedor1.webp"  class="gthumb"        data-gal="uf4" data-i="1" alt="Living comedor">
-                                    <img width="562" height="580" loading="lazy" src="images/uf4/livingcomedor2.webp"  class="gthumb"        data-gal="uf4" data-i="2" alt="Living comedor 2">
-                                    <img width="559" height="700" loading="lazy" src="images/uf4/cocina.webp"          class="gthumb"        data-gal="uf4" data-i="3" alt="Cocina">
-                                    <img width="562" height="700" loading="lazy" src="images/uf4/cuartoppal.webp"      class="gthumb"        data-gal="uf4" data-i="4" alt="Dormitorio principal">
-                                    <img width="553" height="655" loading="lazy" src="images/uf4/banio1.webp"          class="gthumb"        data-gal="uf4" data-i="5" alt="Baño">
-                                    <img width="559" height="699" loading="lazy" src="images/uf4/patio.webp"           class="gthumb"        data-gal="uf4" data-i="6" alt="Patio">
-                                </div>
-                            </div>
-                            <div class="ufd-info">
-                                <div class="uf-specs">
-                                    <div class="spec"><span class="sv">131 m²</span><span class="sl">Construcción</span></div>
-                                    <div class="spec"><span class="sv">620 m²</span><span class="sl">Terreno</span></div>
-                                    <div class="spec"><span class="sv">3</span><span class="sl">Dormitorios</span></div>
-                                    <div class="spec"><span class="sv">4</span><span class="sl">Cocheras</span></div>
-                                </div>
-                                <div class="uf-desc">
-                                    <p>Casa estilo minimalista en una sola planta con espacio guarda coches, palier de entrada con <strong>puerta pivotante</strong>, ambiente abierto con sala de estar, living, comedor y cocina con isla.</p>
-                                    <p>Pisos de porcelanato con <strong>loza radiante</strong>. Cocina con muebles bajo mesada y alacena en olmo finlandés con mesada en negro brasil. Amplia suite, 2 dormitorios adicionales con placard.</p>
-                                    <p>Galería cubierta con parrilla y <strong>300 m² de fondo libre</strong>.</p>
-                                </div>
-                                <div class="uf-tags">
-                                    <span>✓ Loza radiante</span>
-                                    <span>✓ Cocina con isla</span>
-                                    <span>✓ Suite</span>
-                                    <span>✓ Galería con parrilla</span>
-                                    <span>✓ 300m² fondo libre</span>
-                                </div>
-                                <span class="btn-no-disponible">Esta unidad ya no está disponible</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Tarjetas y fichas: se arman con los datos de js/casas.js (js/unidades.js) -->
+            <div class="uf-cards-grid fade-in" id="ufCards"></div>
+            <div class="uf-detail-wrap" id="ufDetails"></div>
         </div>
     </section>
 
@@ -570,8 +277,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <strong>Oficina 1</strong>
-                                <span>Paunero 1455, San Miguel</span>
+                                <strong>Oficina</strong>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Paunero%201455%2C%20San%20Miguel%2C%20Buenos%20Aires" target="_blank" rel="noopener">Paunero 1455, San Miguel</a>
                             </div>
                         </div>
                         <div class="ci-item">
@@ -592,7 +299,7 @@
                     <p class="hp-field">
                         <label>No completar este campo: <input name="bot-field"></label>
                     </p>
-                    <h3>Envianos tu consulta</h3>
+                    <h3>Dejanos tu consulta</h3>
                     <div class="fg">
                         <label for="cgk-name">Nombre completo</label>
                         <input type="text" id="cgk-name" name="name" placeholder="Tu nombre" required>
@@ -611,9 +318,9 @@
                         <label for="cgk-unit">Unidad de interés</label>
                         <select id="cgk-unit" name="unit">
                             <option value="">Seleccionar...</option>
-                            <option value="uf10">UF 10 — Disponible</option>
-                            <option value="uf7">UF 7 — En proyecto</option>
-                            <option value="uf8">UF 8 — En obra (80%)</option>
+                            <option value="uf10">UF 10 — A la venta (terminada)</option>
+                            <option value="uf8">UF 8 — A la venta (en obra 80%)</option>
+                            <option value="uf7">UF 7 — A la venta (en proyecto)</option>
                             <option value="general">Consulta general</option>
                         </select>
                     </div>
@@ -621,7 +328,8 @@
                         <label for="cgk-message">Mensaje</label>
                         <textarea id="cgk-message" name="message" rows="4" placeholder="Escribí tu consulta..."></textarea>
                     </div>
-                    <button type="submit" class="btn-primary btn-block">Enviar Consulta</button>
+                    <button type="submit" class="btn-primary btn-block">Enviar consulta</button>
+                    <p class="form-note">Usamos tus datos solo para responder tu consulta. <a href="privacidad.html">Política de privacidad</a></p>
                 </form>
             </div>
         </div>
@@ -633,7 +341,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo">
-                        <span class="logo-ftp">FTP</span>
+                        <span class="logo-mark" role="img" aria-label="FTP"></span>
                         <span class="logo-des">Desarrollos</span>
                     </div>
                     <p>Construyendo hogares,<br>creando comunidades.</p>
@@ -669,10 +377,15 @@
         <button class="lb-close" onclick="closeLightbox()">×</button>
         <button class="lb-prev" onclick="lightboxNav(-1)">‹</button>
         <button class="lb-next" onclick="lightboxNav(1)">›</button>
-        <img loading="lazy" id="lbImg" src="" alt="">
+        <div class="lb-caption" id="lbCaption"></div>
+        <img id="lbImg" src="" alt="">
         <div class="lb-counter" id="lbCounter"></div>
+        <div class="lb-strip" id="lbStrip"></div>
     </div>
 
+    <script src="js/casas.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/unidades.js"></script>
+    <script src="js/masterplan.js"></script>
 </body>
 </html>

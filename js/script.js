@@ -1,6 +1,6 @@
 const galleries = {
     uf10: [
-        'images/uf10/casa%20afuera%201.webp',
+        'images/uf10/frente-hd.webp',
         'images/uf10/casa%20afuera%20lateral.webp',
         'images/uf10/cocina%201.webp',
         'images/uf10/cocina%202.webp',
@@ -14,16 +14,26 @@ const galleries = {
         'images/uf10/banio3.webp',
     ],
     uf7: [
-        'images/uf7/frente%20L2%20Q2.webp',
-        'images/uf7/Planta%20baja%20L2%20Q2.webp',
-        'images/uf7/Planta%20alta%20L2%20Q2.webp',
+        'images/uf7/frente-dia.webp',
+        'images/uf7/frente-noche.webp',
+        'images/uf7/estar.webp',
+        'images/uf7/cocina.webp',
+        'images/uf7/dormitorio-principal.webp',
+        'images/uf7/bano-suite.webp',
+        'images/uf7/bano-suite-2.webp',
+        'images/uf7/dormitorio-2.webp',
+        'images/uf7/bano.webp',
+        'images/uf7/lateral.webp',
     ],
     uf8: [
-        'images/uf8/frente.webp',
-        'images/uf8/frente%20izq.webp',
-        'images/uf8/frente%20con%20luz3.webp',
-        'images/uf8/plano%20superior%20L3%20Q2.webp',
-        'images/uf8/planoreal.webp',
+        'images/uf8/frente-hd.webp',
+        'images/uf8/living.jpg',
+        'images/uf8/cocina.jpg',
+        'images/uf8/dormitorio-principal.jpg',
+        'images/uf8/bano-a.jpg',
+        'images/uf8/bano-b.jpg',
+        'images/uf8/semicubierto.jpg',
+        'images/uf8/lavadero.jpg',
     ],
     uf4: [
         'images/uf4/frente1.webp',
@@ -123,16 +133,36 @@ function setMainImage(gal, idx) {
 }
 
 // --- Lightbox ---
+const ufNombre = gal => 'UF ' + gal.replace('uf', '').split('-')[0];
+const fotoNombre = (gal, i) => document.querySelector(`.gthumb[data-gal="${gal}"][data-i="${i}"]`)?.alt
+    || (typeof FOTOS !== 'undefined' && FOTOS[gal] && FOTOS[gal][i]) || '';
+
+function renderLightbox() {
+    const imgs = galleries[activeGallery];
+    document.getElementById('lbImg').src = imgs[currentIndex];
+    document.getElementById('lbImg').alt = fotoNombre(activeGallery, currentIndex);
+    document.getElementById('lbCounter').textContent = `${currentIndex + 1} / ${imgs.length}`;
+    const cap = document.getElementById('lbCaption');
+    if (cap) cap.innerHTML = `${ufNombre(activeGallery)}<span>${fotoNombre(activeGallery, currentIndex)}</span>`;
+    document.querySelectorAll('#lbStrip img').forEach((t, i) => t.classList.toggle('on', i === currentIndex));
+}
+
 function openLightboxGal(gal, idx) {
     const imgs = galleries[gal];
     if (!imgs || imgs.length === 0) return;
     activeGallery = gal;
     currentIndex = idx;
-    document.getElementById('lbImg').src = imgs[idx];
-    document.getElementById('lbCounter').textContent = `${idx + 1} / ${imgs.length}`;
+    const strip = document.getElementById('lbStrip');
+    if (strip) strip.innerHTML = imgs.map((src, i) => `<img src="${src}" alt="${fotoNombre(gal, i)}" data-i="${i}" loading="lazy">`).join('');
+    renderLightbox();
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
 }
+
+document.getElementById('lbStrip')?.addEventListener('click', e => {
+    const i = e.target.dataset?.i;
+    if (i != null) { currentIndex = +i; renderLightbox(); }
+});
 
 // backward compat por si algo llama openLightbox sin gal
 function openLightbox(idx) { openLightboxGal(activeGallery, idx); }
@@ -145,9 +175,18 @@ function closeLightbox() {
 function lightboxNav(dir) {
     const imgs = galleries[activeGallery];
     currentIndex = (currentIndex + dir + imgs.length) % imgs.length;
-    document.getElementById('lbImg').src = imgs[currentIndex];
-    document.getElementById('lbCounter').textContent = `${currentIndex + 1} / ${imgs.length}`;
+    renderLightbox();
 }
+
+// Deslizar en el celular
+let lbX0 = null;
+document.getElementById('lbImg')?.addEventListener('touchstart', e => { lbX0 = e.touches[0].clientX; }, { passive: true });
+document.getElementById('lbImg')?.addEventListener('touchend', e => {
+    if (lbX0 == null) return;
+    const dx = e.changedTouches[0].clientX - lbX0;
+    if (Math.abs(dx) > 40) lightboxNav(dx < 0 ? 1 : -1);
+    lbX0 = null;
+});
 
 document.getElementById('lightbox')?.addEventListener('click', function (e) {
     if (e.target === this) closeLightbox();
@@ -191,3 +230,15 @@ document.getElementById('contactForm')?.addEventListener('submit', function (e) 
         btn.disabled = false;
     });
 });
+
+// --- WhatsApp flotante: se oculta mientras se ve Contacto, que ya tiene el número a mano ---
+const waFloat = document.querySelector('.wa-float'), contacto = document.getElementById('contacto');
+if (waFloat && contacto) {
+    const revisar = () => {
+        const r = contacto.getBoundingClientRect();
+        waFloat.classList.toggle('oculto', r.top < innerHeight * 0.75 && r.bottom > innerHeight * 0.25);
+    };
+    addEventListener('scroll', revisar, { passive: true });
+    addEventListener('resize', revisar);
+    revisar();
+}

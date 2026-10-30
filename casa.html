@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Casa | Barrio Los Ginkgos | FTP Desarrollos</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#121212">
+    <meta name="description" content="Casas de Barrio Los Ginkgos en Muñiz, San Miguel: fotos, planos, superficies y ubicación de cada unidad.">
+    <meta property="og:image" content="https://ftpdesarrollos.com/images/barrio/barrio1-og.jpg">
+    <meta property="og:locale" content="es_AR">
+
+    <script>document.documentElement.classList.add('js')</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark" role="img" aria-label="FTP"></span>
+                    <span class="logo-des">Desarrollos</span>
+                </a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="barrio-los-ginkgos.html#lotes">El barrio</a>
+                    <a href="#casa">La casa</a>
+                    <a href="#recorrido" id="navPlanta" hidden>Vista 3D</a>
+                    <a href="#planos" id="navPlanos">Planos</a>
+                    <a href="#fotos">Fotos</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="https://wa.me/5491159951188" class="nav-wa" id="navWa" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-tag" id="heroTag">Barrio Los Ginkgos · Muñiz</span>
+                <h1 class="hero-title" id="heroTitle">Casa</h1>
+                <p class="hero-sub" id="heroSub"></p>
+                <div class="hero-btns">
+                    <a href="#fotos" class="btn-primary" id="heroBtn">Ver fotos</a>
+                    <a href="#contacto" class="btn-ghost">Consultanos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="facts-strip">
+        <div class="container"><dl id="facts"></dl></div>
+    </div>
+
+    <!-- RECORRIDO POR LA PLANTA (solo casas con planta ilustrada) -->
+    <section class="section-recorrido-casa" id="recorrido" hidden>
+        <div class="container">
+            <div class="split-head fade-in">
+                <div>
+                    <span class="label">Vista 3D</span>
+                    <h2 class="section-title">Recorré la casa <em>ambiente</em> por ambiente</h2>
+                </div>
+                <p>Vista 3D armada sobre el plano de obra y las terminaciones reales. Tocá un ambiente para ver sus fotos.</p>
+            </div>
+            <div class="planbox">
+                <div class="plan-main">
+                <div class="tabs" id="pisoTabs" role="tablist" aria-label="Plantas" hidden></div>
+                <div class="plan-sheet">
+                    <svg id="plantaCasa" class="planta-casa" role="img" aria-label="Planta de la casa con ambientes seleccionables"></svg></div>
+                    <ol class="amb-list" id="ambList"></ol>
+                </div>
+                <aside class="plan-side">
+                    <div class="plan-preview">
+                        <img id="pvImg" alt="" width="640" height="800">
+                        <div><b id="pvT"></b><span id="pvS"></span></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- LA CASA -->
+    <section id="casa">
+        <div class="container">
+            <div class="casa-grid fade-in">
+                <div>
+                    <span class="label">La casa</span>
+                    <h2 class="section-title" id="casaTitle"></h2>
+                    <div class="uf-desc" id="casaDesc"></div>
+                    <div class="uf-tags" id="casaTags"></div>
+                </div>
+                <aside class="casa-ubic">
+                    <p class="k-label">Ubicación en el barrio</p>
+                    <div class="mp-sheet"><svg id="masterplan" role="img" aria-label="Ubicación de la casa dentro del barrio"></svg></div>
+                    <a href="barrio-los-ginkgos.html#lotes" class="btn-outline btn-block">Ver todos los lotes</a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAQUETA 3D (solo casas que la tienen) -->
+    <section id="maqueta" hidden>
+        <div class="container">
+            <div class="split-head fade-in">
+                <div>
+                    <span class="label">Maqueta</span>
+                    <h2 class="section-title">La casa en <em>3D</em></h2>
+                </div>
+                <p>Girala con el mouse o con el dedo y acercate con la rueda o pellizcando.</p>
+            </div>
+            <div class="maqueta" id="maqueta3d" aria-label="Maqueta 3D de la casa, sin techo"></div>
+            <p class="note">Maqueta levantada sobre el plano de obra: los muros siguen el plano original. Mobiliario de referencia.</p>
+        </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos">
+        <div class="container">
+            <div class="split-head fade-in">
+                <div>
+                    <span class="label">Planos</span>
+                    <h2 class="section-title">La <em>planta</em></h2>
+                </div>
+                <div class="tabs" id="planoTabs" role="tablist" aria-label="Planos"></div>
+            </div>
+            <figure class="plano-hoja fade-in" id="planoHoja">
+                <img id="planoImg" alt="">
+                <figcaption><span id="planoCap"></span><button type="button" class="btn-outline" id="planoZoom">Ampliar</button></figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- FOTOS -->
+    <section id="fotos">
+        <div class="container">
+            <div class="split-head fade-in">
+                <div>
+                    <span class="label">Fotos</span>
+                    <h2 class="section-title">Todas las <em>fotos</em></h2>
+                </div>
+                <p>Tocá una foto para verla en grande y pasar a las siguientes.</p>
+            </div>
+            <div class="ugrid fade-in" id="fotosGrid"></div>
+        </div>
+    </section>
+
+    <!-- OTRAS CASAS -->
+    <section class="section-otras">
+        <div class="container">
+            <span class="label">Otras casas del barrio</span>
+            <div class="otras-grid" id="otras"></div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section-contacto" id="contacto">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <span class="label label-light">Contacto</span>
+                    <h2>Hablemos de<br><em>esta casa</em></h2>
+                    <p>Te contamos disponibilidad, plazos y formas de pago. Los precios son a consulta.</p>
+                    <div class="ci-list">
+                        <div class="ci-item">
+                            <div class="ci-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.59 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                            <div><strong>WhatsApp</strong><a href="https://wa.me/5491159951188" id="ciWa" target="_blank" rel="noopener">+54 9 11 5995-1188</a></div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                            <div><strong>Email</strong><a href="mailto:ftpdesarrollos@gmail.com">ftpdesarrollos@gmail.com</a></div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                            <div><strong>El barrio</strong><a href="https://www.google.com/maps/search/?api=1&query=Azcu%C3%A9naga%202752%2C%20Mu%C3%B1iz%2C%20San%20Miguel%2C%20Buenos%20Aires" target="_blank" rel="noopener">Azcuénaga 2752, Muñiz · San Miguel</a></div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm" name="contacto-ginkgos" method="POST" netlify netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contacto-ginkgos">
+                    <input type="hidden" name="unit" id="formUnit" value="">
+                    <p class="hp-field"><label>No completar este campo: <input name="bot-field"></label></p>
+                    <h3 id="formTitle">Consultá por esta casa</h3>
+                    <div class="fg">
+                        <label for="cc-name">Nombre completo</label>
+                        <input type="text" id="cc-name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="fg-row">
+                        <div class="fg">
+                            <label for="cc-email">Email</label>
+                            <input type="email" id="cc-email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="fg">
+                            <label for="cc-phone">Teléfono</label>
+                            <input type="tel" id="cc-phone" name="phone" placeholder="11 1234-5678">
+                        </div>
+                    </div>
+                    <div class="fg">
+                        <label for="cc-message">Mensaje</label>
+                        <textarea id="cc-message" name="message" rows="4" placeholder="Escribí tu consulta..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Enviar consulta</button>
+                    <p class="form-note">Usamos tus datos solo para responder tu consulta. <a href="privacidad.html">Política de privacidad</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-mark" role="img" aria-label="FTP"></span>
+                        <span class="logo-des">Desarrollos</span>
+                    </div>
+                    <p>Construyendo hogares,<br>creando comunidades.</p>
+                </div>
+                <div class="footer-nav">
+                    <p class="footer-heading">Navegación</p>
+                    <a href="index.html">Todos los proyectos</a>
+                    <a href="barrio-los-ginkgos.html">Barrio Los Ginkgos</a>
+                    <a href="barrio-los-ginkgos.html#lotes">Lotes</a>
+                </div>
+                <div class="footer-contact">
+                    <p class="footer-heading">Contacto</p>
+                    <a href="https://wa.me/5491159951188" target="_blank" rel="noopener">+54 9 11 5995-1188</a>
+                    <a href="mailto:ftpdesarrollos@gmail.com">ftpdesarrollos@gmail.com</a>
+                    <a href="https://www.instagram.com/ftpdesarrollos/" target="_blank" rel="noopener">Instagram</a>
+                    <span>Paunero 1455, San Miguel</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 FTP Desarrollos. Todos los derechos reservados. · <a href="privacidad.html">Política de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5491159951188" class="wa-float" id="waFloat" target="_blank" rel="noopener" title="Consultanos por WhatsApp" aria-label="Consultanos por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" onclick="closeLightbox()" aria-label="Cerrar">×</button>
+        <button class="lb-prev" onclick="lightboxNav(-1)" aria-label="Anterior">‹</button>
+        <button class="lb-next" onclick="lightboxNav(1)" aria-label="Siguiente">›</button>
+        <div class="lb-caption" id="lbCaption"></div>
+        <img id="lbImg" src="" alt="">
+        <div class="lb-counter" id="lbCounter"></div>
+        <div class="lb-strip" id="lbStrip"></div>
+    </div>
+
+    <script src="js/casas.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/uf10-muros.js"></script>
+    <script src="js/plantas-casas.js"></script>
+    <script src="js/casa.js"></script>
+    <script src="js/masterplan.js"></script>
+    <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+    </script>
+    <script type="module">
+        // La maqueta 3D se carga solo en las casas que la tienen
+        // Maqueta en pausa hasta tener una versión aprobada
+        if (false) {
+            document.getElementById('maqueta').hidden = false;
+            import('./js/maqueta-uf10.js');
+        }
+    </script>
+</body>
+</html>
