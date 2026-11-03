@@ -1,43 +1,46 @@
 /* =========================================================
    FTP Desarrollos — sistema de diseño
-   Blanco y negro, como el logo: negro para textos y acciones, blancos y grises
-   cálidos para fondos y detalles. El color queda solo para los estados de los lotes.
-   Archivo para títulos,
-   Archivo Narrow para rótulos, IBM Plex Mono para cifras.
+   Según el manual de marca: negro gastado #1C1C1C para textos y acciones, hueso #F2F1EB
+   para fondos y verde musgo #2B481F solo en detalles (lotes en venta, unidades disponibles).
+   Montserrat para todo (extranegrita en títulos) y DejaVu Serif para frases cortas.
    ========================================================= */
 :root {
-    --paper:      #F4F3F0;
+    --paper:      #F2F1EB;   /* hueso */
     --paper-2:    #FAFAF8;
     --sheet:      #FFFFFF;
     --sand:       #E7E5E0;
     --rule:       #DAD7D1;
-    --ink:        #141414;
+    --ink:        #1C1C1C;   /* negro gastado */
     --ink-2:      #2B2B2B;
     --muted:      #6B6964;
-    --accent:     #141414;
-    --hot:        #141414;
+    --accent:     #1C1C1C;
+    --hot:        #1C1C1C;
     --em:         #8F8C86;   /* palabra destacada de los títulos */
     --on-night-3: #C9C7C2;   /* rótulos e íconos sobre negro */
     --wood:       #4A4038;
     --night:      #121212;
     --night-2:    #1C1C1C;
     --night-rule: #2E2E2E;
-    --on-night:   #F2F1EE;
+    --on-night:   #F2F1EB;
     --on-night-2: #A9A7A2;
 
-    --ok:   #3F6F45;
+    --verde: #2B481F;   /* verde musgo */
+    --ok:   var(--verde);
     --dev:  #B07D2E;
     --sold: #8A8782;
 
-    --f-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
-    --f-label:   'Archivo Narrow', 'Arial Narrow', ui-sans-serif, sans-serif;
-    --f-mono:    'IBM Plex Mono', ui-monospace, Consolas, monospace;
+    --f-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --f-label:   var(--f-display);
+    --f-mono:    var(--f-display);   /* cifras: Montserrat con números tabulares */
+    --f-serif:   'DejaVu Serif', Georgia, serif;
 
     --radius: 8px;
     --radius-btn: 999px;   /* botones en forma de píldora */
     --ease: .25s ease;
     --gutter: max(20px, env(safe-area-inset-left, 0px));
 }
+
+@font-face { font-family: 'DejaVu Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/dejavu-serif-400.woff2") format("woff2"); }
 
 /* === BASE === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,10 +55,9 @@ body {
 }
 h1, h2, h3, h4 {
     font-family: var(--f-display);
-    font-stretch: 115%;
-    font-weight: 760;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
     text-wrap: balance;
 }
 em { font-style: normal; color: var(--em); }
@@ -89,6 +91,8 @@ button { font-family: inherit; }
 .section-title { font-size: clamp(34px, 5vw, 60px); margin-bottom: 18px; }
 .section-subtitle { color: var(--muted); max-width: 58ch; font-size: 17px; margin-bottom: 40px; }
 .num, .stat-num, .sv { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+/* frases cortas en la serif del manual */
+.serif, .hero-sub { font-family: var(--f-serif); }
 
 /* === BOTONES === */
 .btn-primary, .btn-ghost, .btn-outline, .btn-no-disponible {
@@ -126,15 +130,14 @@ button { font-family: inherit; }
     border-bottom: 1px solid transparent;
 }
 .nav-content { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
-/* logo en línea: "FTP" con las letras del logo (sin el edificio, que queda para el ícono cuadrado).
-   Toma el color del texto: blanco sobre la foto, oscuro con el menú claro */
-.logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; }
+/* logo oficial del manual, como máscara: toma el color del texto (hueso sobre la foto,
+   negro con el menú claro). Arriba la versión horizontal; en el pie, la principal */
+.logo { display: inline-flex; align-items: center; color: var(--on-night); }
 .logo-mark {
-    width: 73px; height: 20px; flex-shrink: 0; background: currentColor;
-    -webkit-mask: url("../images/logo/logo-ftp-linea.png") center / contain no-repeat;
-    mask: url("../images/logo/logo-ftp-linea.png") center / contain no-repeat;
+    width: 150px; height: 50px; flex-shrink: 0; background: currentColor;
+    -webkit-mask: url("../images/logo/ftp-horizontal.svg") center / contain no-repeat;
+    mask: url("../images/logo/ftp-horizontal.svg") center / contain no-repeat;
 }
-.logo-des { font: 600 11px/1 var(--f-label); letter-spacing: .26em; text-transform: uppercase; opacity: .85; }
 .nav-menu { display: flex; align-items: center; gap: 30px; }
 .nav-menu a { font: 600 13px/1 var(--f-label); letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.88); }
 .nav-menu a:hover { color: #fff; }
@@ -145,7 +148,7 @@ button { font-family: inherit; }
 .nav-menu a.nav-wa::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3FCB72; }
 .nav-menu a.nav-wa:hover { background: rgba(255,255,255,.12); }
 
-.navbar.scrolled, .navbar.navbar-static { background: rgba(244,243,240,.94); backdrop-filter: blur(10px); border-bottom-color: var(--rule); }
+.navbar.scrolled, .navbar.navbar-static { background: rgba(242,241,235,.94); backdrop-filter: blur(10px); border-bottom-color: var(--rule); }
 .navbar.scrolled .logo, .navbar.navbar-static .logo { color: var(--ink); }
 .navbar.scrolled .nav-menu a, .navbar.navbar-static .nav-menu a { color: var(--ink-2); }
 .navbar.scrolled .nav-menu a:hover, .navbar.navbar-static .nav-menu a:hover { color: var(--accent); }
@@ -169,7 +172,7 @@ button { font-family: inherit; }
 .hero-content { max-width: 820px; }
 .hero-tag { display: inline-flex; align-items: center; gap: 12px; font: 600 13px/1 var(--f-label); letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.78); margin-bottom: 22px; text-shadow: 0 1px 10px rgba(10,10,10,.55); }
 .hero-tag::before { content: ''; width: 28px; height: 2px; background: currentColor; }
-.hero-title { font-size: clamp(54px, 10vw, 132px); font-stretch: 125%; font-weight: 800; letter-spacing: -.04em; line-height: .9; margin-bottom: 26px; }
+.hero-title { font-size: clamp(42px, 8vw, 108px); font-weight: 800; letter-spacing: -.02em; line-height: .95; text-transform: uppercase; margin-bottom: 26px; }
 .hero-title em { color: rgba(255,255,255,.62); }
 .hero-sub { font-size: clamp(16px, 1.6vw, 19px); color: #ECEBE8; max-width: 46ch; margin-bottom: 34px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -297,7 +300,7 @@ section { padding: 110px 0; }
 .lotes-legend li { display: flex; align-items: center; gap: 8px; }
 .lotes-legend i { width: 12px; height: 12px; border-radius: 2px; background: var(--st); border: 1px solid var(--st-line, transparent); }
 .lotes-grid { list-style: none; display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 8px; }
-.st-disponible { --st: var(--ok); --st-bg: #E3EBDD; }
+.st-disponible { --st: var(--ok); --st-bg: #E1E6DB; }
 .st-obra { --st: var(--dev); --st-bg: #F2E6D3; }
 .st-proyecto { --st: var(--hot); --st-bg: #F3E0D6; }
 .st-terminada { --st: var(--wood); --st-bg: #E8DDD2; }
@@ -348,10 +351,10 @@ section { padding: 110px 0; }
 .mp-lot.st-vendido .mp-n, .mp-lot.st-vendido .mp-st { fill: rgba(255, 255, 255, .82); }
 .mp-flag { pointer-events: none; }
 .lotes-legend i.st-vendido { --st: #C62828; }
-.lotes-legend i.st-disponible { --st: #2E7D32; }
+.lotes-legend i.st-disponible { --st: var(--verde); }
 .lotes-legend i.st-terreno { --st: #E09A1A; --st-line: transparent; }
 .mp-flag rect { fill: #C62828; stroke: rgba(255, 255, 255, .85); stroke-width: .2; }
-.mp-flag-venta rect { fill: #2E7D32; }
+.mp-flag-venta rect { fill: var(--verde); }
 .mp-flag-proximo rect { fill: #E09A1A; }
 .mp-flag text { font: 700 2.1px var(--f-label); letter-spacing: .3px; fill: #fff; text-anchor: middle; }
 .mp-card { background: var(--paper-2); border: 1px solid var(--rule); border-top: 5px solid var(--accent); border-radius: var(--radius); padding: 20px; display: grid; gap: 12px; }
@@ -494,7 +497,7 @@ section { padding: 110px 0; }
 .otra img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .otra div { padding: 12px 14px; display: grid; gap: 4px; align-content: center; }
 .otra [class^="badge-"] { justify-self: start; padding: 6px 8px; font-size: 10px; }
-.otra b { font-size: 20px; font-stretch: 112%; }
+.otra b { font-size: 20px; }
 .otra small { font: 500 12px var(--f-mono); color: var(--muted); }
 
 /* === UNIDADES (tarjetas + detalle) === */
@@ -590,8 +593,8 @@ section { padding: 110px 0; }
 /* === PIE === */
 .footer { background: var(--night-2); color: var(--on-night-2); padding: 70px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--night-rule); }
-.footer .logo { color: #fff; margin-bottom: 14px; gap: 12px; }
-.footer .logo-mark { width: 88px; height: 24px; }
+.footer .logo { color: var(--on-night); margin-bottom: 18px; }
+.footer .logo-mark { width: 96px; height: 100px; -webkit-mask-image: url("../images/logo/ftp-principal.svg"); mask-image: url("../images/logo/ftp-principal.svg"); }
 .footer-brand p { max-width: 30ch; }
 .footer-heading { font: 600 11px var(--f-label); letter-spacing: .18em; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
 .footer-nav, .footer-contact { display: flex; flex-direction: column; gap: 9px; font-size: 15px; }
@@ -612,7 +615,7 @@ section { padding: 110px 0; }
 
 /* === VISOR DE IMÁGENES (Ginkgos) === */
 .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(10,10,10,.95); display: none; align-items: center; justify-content: center; padding: 70px 70px 120px; }
-.lb-caption { position: absolute; top: 22px; left: max(20px, env(safe-area-inset-left, 0px)); right: 80px; color: #fff; font-weight: 700; font-stretch: 108%; font-size: 18px; }
+.lb-caption { position: absolute; top: 22px; left: max(20px, env(safe-area-inset-left, 0px)); right: 80px; color: #fff; font-weight: 700; font-size: 18px; }
 .lb-caption span { font: 500 13px var(--f-mono); opacity: .75; margin-left: 10px; }
 .lb-strip { position: absolute; left: 0; right: 0; bottom: max(16px, env(safe-area-inset-bottom, 0px)); display: flex; gap: 6px; justify-content: center; overflow-x: auto; padding: 0 20px; }
 .lb-strip img { width: 84px; height: 54px; object-fit: cover; opacity: .45; cursor: pointer; border-radius: 2px; flex: none; }
@@ -639,7 +642,7 @@ section { padding: 110px 0; }
 .legal-content ul { padding-left: 20px; }
 .legal-content a { color: var(--accent); text-decoration: underline; }
 .section-404 { min-height: 80vh; display: flex; align-items: center; padding: 150px 0 90px; }
-.error-404-num { font: 800 clamp(110px, 20vw, 220px)/.85 var(--f-display); font-stretch: 125%; letter-spacing: -.05em; color: var(--accent); margin-bottom: 20px; display: block; }
+.error-404-num { font: 800 clamp(110px, 20vw, 220px)/.85 var(--f-display); letter-spacing: -.05em; color: var(--accent); margin-bottom: 20px; display: block; }
 .section-404 .btn-ghost { border-color: var(--ink); color: var(--ink); }
 
 /* =========================================================
@@ -676,7 +679,7 @@ section { padding: 110px 0; }
 .plan-preview { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .plan-preview img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--sand); cursor: zoom-in; }
 .plan-preview div { padding: 13px 15px; }
-.plan-preview b { display: block; font-stretch: 108%; font-size: 18px; }
+.plan-preview b { display: block; font-size: 18px; }
 .plan-preview span { font: 500 12px var(--f-mono); color: var(--muted); }
 .unit-list { list-style: none; border-top: 1px solid var(--rule); }
 .unit-list li { display: flex; justify-content: space-between; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
@@ -725,7 +728,7 @@ section { padding: 110px 0; }
 
 .viewer { position: fixed; inset: 0; z-index: 200; background: rgba(10,10,10,.95); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; color: var(--on-night); padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); }
 .viewer-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px; }
-.viewer-title { font-weight: 700; font-stretch: 108%; font-size: 18px; }
+.viewer-title { font-weight: 700; font-size: 18px; }
 .viewer-title span { font: 500 13px var(--f-mono); opacity: .7; margin-left: 10px; }
 .viewer-stage { position: relative; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 0 64px; }
 .viewer-stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
@@ -780,6 +783,7 @@ section { padding: 110px 0; }
     .hero-scroll { display: none; }
 }
 @media (max-width: 600px) {
+    .navbar .logo-mark { width: 120px; height: 40px; }
     .lotes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .lote { min-height: 0; }
     .uf-cards-grid { grid-template-columns: minmax(0, 1fr); }
