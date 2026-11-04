@@ -17,9 +17,9 @@
     };
     // n, quinta, estado, detalle, superficie (m²), frente (m), unidad con ficha
     const LOTES = [
-        [1, 1, 'vendido', 'Terreno vendido', 516.00, null],
-        [2, 1, 'vendido', 'Terreno vendido', 592.00, null],
-        [3, 1, 'vendido', 'Terreno vendido', 443.00, null],
+        [1, 1, 'vendido', 'Casa vendida', 516.00, null],
+        [2, 1, 'vendido', 'Casa vendida', 592.00, null],
+        [3, 1, 'vendido', 'Casa vendida', 443.00, null],
         [4, 1, 'vendido', 'Casa de 131 m² vendida', 623.00, null, 'uf4'],
         [5, 1, 'vendido', 'Casa terminada y vendida', 501.00, null],
         [6, 2, 'proximo', 'Terreno para una próxima casa', 447.80],
@@ -29,6 +29,8 @@
         [10, 2, 'venta', 'Casa terminada, lista para mudarse', 581.90, null, 'uf10'],
         [11, 2, 'proximo', 'Terreno para una próxima casa', 577.40]
     ];
+    // con casa (vendida, en obra, terminada o en proyecto) se llama UF; si es solo terreno, Lote
+    const nombre = n => LOTES[n - 1][3].startsWith('Terreno') ? 'Lote' : 'UF';
 
     /* Geometría base en metros, sin girar: x de izquierda a derecha, y desde el fondo (0) hacia Azcuénaga (AZ) */
     const AZ = 100.98, FONDO = 30, CALLE = 7.5;              // media calle de 7,50 m a cada lado del eje
@@ -70,7 +72,7 @@
     s += '<g class="mp-lots">';
     LOTES.forEach(([n, , est]) => {
         const [x1, y1, x2, y2] = shapes[n], [cx, cy] = rot((x1 + x2) / 2, (y1 + y2) / 2);
-        s += `<g class="mp-lot ${ESTADOS[est][1]}" data-n="${n}" tabindex="0" role="button" aria-label="Lote ${n}: ${ESTADOS[est][0]}">` +
+        s += `<g class="mp-lot ${ESTADOS[est][1]}" data-n="${n}" tabindex="0" role="button" aria-label="${nombre(n)} ${n}: ${ESTADOS[est][0]}">` +
             `<polygon points="${poly(x1 + .45, y1 + .45, x2 - .45, y2 - .45)}"/>` +
             `<text x="${cx}" y="${cy + 1}" class="mp-n">${String(n).padStart(2, '0')}</text>` +
             (BANDA[est] ? banda(n, est, x1, y1, x2, y2) : `<text x="${cx}" y="${cy + 5.2}" class="mp-st">${(ESTADOS[est][2] || ESTADOS[est][0]).toUpperCase()}</text>`) + '</g>';
@@ -137,17 +139,18 @@
         actual = n;
         const [, , est, det, sup, fr, uf] = LOTES[n - 1];
         svg.querySelectorAll('.mp-lot').forEach(g => g.classList.toggle('on', +g.dataset.n === n));
-        const wa = 'https://wa.me/5491159951188?text=' + encodeURIComponent(`Hola! Me interesa el lote ${n} del Barrio Los Ginkgos.`);
+        const esUF = nombre(n) === 'UF';
+        const wa = 'https://wa.me/5491159951188?text=' + encodeURIComponent(`Hola! Me interesa ${esUF ? 'la UF' : 'el lote'} ${n} del Barrio Los Ginkgos.`);
         card.dataset.casa = uf || '';
         card.innerHTML =
             `<span class="mp-chip ${ESTADOS[est][1]}">${ESTADOS[est][0]}</span>` +
-            `<h3>Lote ${String(n).padStart(2, '0')}</h3>` +
+            `<h3>${nombre(n)} ${String(n).padStart(2, '0')}</h3>` +
             `<p>${det}</p>` +
             (uf ? casa(uf) : '') +
             `<dl>` +
             (fr ? `<div><dt>Frente</dt><dd>≈ ${fr.toFixed(1).replace('.', ',')} m</dd></div>` : '') +
             `<div><dt>Superficie</dt><dd>${fmt(sup)} m²</dd></div></dl>` +
-            (est === 'vendido' ? '' : `<a href="${wa}" target="_blank" rel="noopener" class="btn-outline btn-block">Consultar por este lote</a>`);
+            (est === 'vendido' ? '' : `<a href="${wa}" target="_blank" rel="noopener" class="btn-outline btn-block">Consultar por ${esUF ? 'esta unidad' : 'este lote'}</a>`);
     }
     const pick = e => { const g = e.target.closest('.mp-lot'); return g && +g.dataset.n; };
     svg.addEventListener('mouseover', e => { const n = pick(e); if (n) show(n); });
