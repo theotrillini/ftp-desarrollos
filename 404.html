@@ -34,7 +34,31 @@
                     <span class="logo-mark" role="img" aria-label="FTP Desarrollos"></span>
                 </a>
                 <div class="nav-menu" id="navMenu">
-                    <a href="index.html#proyectos">Proyectos</a>
+                    <div class="nav-drop" id="navDrop">
+                        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-controls="navProyectos">Proyectos</button>
+                        <div class="nav-mega" id="navProyectos">
+                            <div class="container nav-mega-in">
+                                <div class="nm-proyectos">
+                                    <span class="nm-label">Proyectos</span>
+                                    <button class="nm-proyecto" type="button" aria-expanded="false" aria-controls="nmGinkgos">
+                                        <img src="images/menu/ginkgos.webp" alt="" width="160" height="110" loading="lazy">
+                                        <span><b>Barrio Los Ginkgos</b><small>Muñiz, San Miguel · 11 unidades</small></span>
+                                    </button>
+                                    <a href="index.html#proyectos" class="nm-todos">Todos los proyectos</a>
+                                </div>
+                                <div class="nm-unidades">
+                                    <div class="nm-grupo" id="nmGinkgos" hidden>
+                                        <div class="nm-grupo-head"><span class="nm-label">Unidades a la venta</span><a href="barrio-los-ginkgos.html" class="nm-ver">Ver el barrio</a></div>
+                                        <div class="nm-cards">
+                                            <a href="casa.html?uf=uf10" class="nm-card" data-uf="uf10"><img src="images/menu/uf10.webp" alt="" width="480" height="320" loading="lazy"><b>UF 10</b><small>Terminada · entrega inmediata</small></a>
+                                            <a href="casa.html?uf=uf8" class="nm-card" data-uf="uf8"><img src="images/menu/uf8.webp" alt="" width="480" height="320" loading="lazy"><b>UF 8</b><small>En obra · 80%</small></a>
+                                            <a href="casa.html?uf=uf7" class="nm-card" data-uf="uf7"><img src="images/menu/uf7.webp" alt="" width="480" height="320" loading="lazy"><b>UF 7</b><small>En proyecto</small></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="index.html#nosotros">Nosotros</a>
                     <a href="index.html#contacto">Contacto</a>
                     <a href="https://wa.me/5491159951188?text=Hola!%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20desarrollos%20de%20FTP%20Desarrollos." class="nav-wa" target="_blank">WhatsApp</a>

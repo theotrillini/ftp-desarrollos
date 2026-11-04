@@ -51,9 +51,10 @@ let currentIndex = 0;
 
 // --- Navbar scroll ---
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+// el menú queda claro al bajar, y también mientras está abierto el menú del celular o la barra de Proyectos
+const pintarNav = () => navbar.classList.toggle('scrolled', window.scrollY > 50
+    || !!document.querySelector('#navMenu.open, #navDrop.open'));
+window.addEventListener('scroll', pintarNav);
 
 // --- Hero parallax ---
 const heroBg = document.querySelector('.hero-bg');
@@ -75,10 +76,42 @@ if (slides.length > 0) {
 // --- Hamburger ---
 document.getElementById('hamburger')?.addEventListener('click', () => {
     document.getElementById('navMenu').classList.toggle('open');
+    pintarNav();
 });
 document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => document.getElementById('navMenu').classList.remove('open'));
+    link.addEventListener('click', () => { document.getElementById('navMenu').classList.remove('open'); pintarNav(); });
 });
+
+// --- Menú "Proyectos": barra ancha que se abre con clic; al elegir un proyecto aparecen sus unidades ---
+const navDrop = document.getElementById('navDrop');
+if (navDrop) {
+    const btn = navDrop.querySelector('.nav-drop-btn');
+    const proyectos = navDrop.querySelectorAll('.nm-proyecto');
+    const barra = navDrop.querySelector('.nav-mega-in');
+    // con un proyecto elegido la lista se corre a la izquierda y aparecen sus unidades
+    const elegir = p => {
+        proyectos.forEach(x => {
+            const si = x === p;
+            x.setAttribute('aria-expanded', si);
+            document.getElementById(x.getAttribute('aria-controls')).hidden = !si;
+        });
+        barra.classList.toggle('con-unidades', !!p);
+    };
+    const abrir = si => {
+        navDrop.classList.toggle('open', si);
+        btn.setAttribute('aria-expanded', si);
+        pintarNav();
+        if (!si) elegir(null);
+    };
+    btn.addEventListener('click', e => { e.stopPropagation(); abrir(!navDrop.classList.contains('open')); });
+    proyectos.forEach(p => p.addEventListener('click', () => elegir(p.getAttribute('aria-expanded') === 'true' ? null : p)));
+    document.addEventListener('click', e => { if (!navDrop.contains(e.target)) abrir(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') abrir(false); });
+    navDrop.querySelectorAll('a').forEach(a => a.addEventListener('click', () => abrir(false)));
+    // marca la casa que se está viendo
+    const uf = new URLSearchParams(location.search).get('uf');
+    if (uf) navDrop.querySelector(`[data-uf="${uf}"]`)?.setAttribute('aria-current', 'page');
+}
 
 // --- Toggle UF detail panels ---
 function toggleUF(ufId, cardEl) {

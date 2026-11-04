@@ -30,7 +30,6 @@
         $('recorrido').hidden = false;
         // render vertical (más alto que ancho): la imagen va en una columna más angosta
         if (planta.render && planta.render.alto > planta.render.ancho) $('recorrido').classList.add('vertical');
-        $('navPlanta').hidden = false;
         $('heroBtn').href = '#recorrido'; $('heroBtn').textContent = 'Recorrer la casa';
         $('heroBtnPlanta')?.removeAttribute('hidden');
         const amb = id => planta.ambientes.find(a => a[0] === id);
@@ -76,7 +75,7 @@
         ? fotos.map((src, i) => [src, nombres[i], i]).filter(p => /plan/i.test(p[1]))
         : c.planos.map(([src, cap]) => [src, cap, null]);
     if (!planos.length) {
-        $('planos').hidden = true; $('navPlanos').hidden = true;
+        $('planos').hidden = true;
     } else {
         galleries[uf + '-planos'] = planos.map(p => p[0]);
         FOTOS[uf + '-planos'] = planos.map(p => p[1]);
