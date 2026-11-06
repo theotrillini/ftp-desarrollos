@@ -121,20 +121,22 @@
         </div>
     </nav>
 
-    <!-- PORTADA -->
+    <!-- PORTADA (queda fija y la sección de proyectos sube por encima) -->
+    <div class="inicio-capas">
     <section class="hero hero-home" id="inicio">
         <div class="hero-slideshow">
             <div class="hero-slide active" style="background-image:url('images/uf10/frente-hd.webp')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf8/frente-hd.webp')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf10/casa%20afuera%20lateral.webp')"></div>
-            <div class="hero-slide" style="background-image:url('images/uf7/frente-dia.webp')"></div>
+            <div class="hero-slide" data-bg="images/uf10/living%201.webp" style="--tono:brightness(.84) contrast(1.06)"></div>
+            <div class="hero-slide" data-bg="images/uf8/frente-hd.webp"></div>
+            <div class="hero-slide" data-bg="images/uf7/estar.webp" style="--tono:brightness(.86) contrast(1.06)"></div>
+            <div class="hero-slide" data-bg="images/uf4/frente-hd.webp" style="--tono:brightness(.9) contrast(1.05) saturate(1.1)"></div>
+            <div class="hero-slide" data-bg="images/uf10/cocina%201.webp"></div>
+            <div class="hero-slide" data-bg="images/uf7/frente-noche.webp" style="--tono:brightness(1.18)"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="hero-tag">San Miguel · Buenos Aires</span>
-                <h1 class="hero-title">Espacios<br><em>para vivir</em></h1>
-                <p class="hero-sub">Desarrollamos viviendas de calidad en entornos naturales, pensadas para familias que buscan una vida mejor.</p>
+                <h1 class="hero-title hero-frase">Desarrollamos casas y barrios cerrados integrando diseño y naturaleza.</h1>
                 <div class="hero-btns">
                     <a href="#proyectos" class="btn-primary">Ver proyectos</a>
                     <a href="#contacto" class="btn-ghost">Contactanos</a>
@@ -183,7 +185,7 @@
             </div>
         </div>
     </section>
-
+    </div>
 
     <!-- NOSOTROS -->
     <section class="section-nosotros" id="nosotros">
@@ -198,11 +200,14 @@
                     <p>Nuestro trabajo se basa en la transparencia, la calidad constructiva y el cumplimiento de cada etapa. Proyectamos viviendas de arquitectura contemporánea en entornos verdes consolidados, que ofrecen privacidad y confort sin resignar ubicación ni infraestructura.</p>
                 </div>
             </div>
-            <!-- FOTO DEL EQUIPO (horizontal, de los 3): cuando esté, reemplazar el div .foto-pendiente por
-                 <img src="images/nosotros/equipo.webp" alt="..." width="..." height="..." loading="lazy"> -->
             <figure class="nosotros-foto fade-in">
-                <div class="foto-pendiente"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto del equipo</span></div>
+                <img src="images/nosotros/equipo.webp" alt="Theo, Pedro y Francisco Trillini, fundadores de FTP Desarrollos" width="1500" height="750" loading="lazy">
             </figure>
+            <ul class="equipo fade-in">
+                <li><b>Theo Trillini</b><span>Gerente de Compras y Mkt Digital</span><span>Cofundador de FTP Desarrollos</span></li>
+                <li><b>Pedro Trillini</b><span>Gerente Comercial y de Nuevos Negocios</span><span>Cofundador de FTP Desarrollos</span></li>
+                <li><b>Francisco Trillini</b><span>Gerente de Administración y Finanzas</span><span>Cofundador de FTP Desarrollos</span></li>
+            </ul>
             <div class="nosotros-stats fade-in">
                 <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Hermanos fundadores</span></div>
                 <div class="stat-item"><span class="stat-num">2</span><span class="stat-label">Arquitectos en todas nuestras obras</span></div>

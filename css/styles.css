@@ -51,6 +51,7 @@ body {
     color: var(--ink);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-x: clip;   /* corta lo que sobresale sin volverse contenedor de scroll (si no, las fotos fijas de la portada no funcionan) */
     -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4 {
@@ -216,9 +217,22 @@ button { font-family: inherit; }
 
 /* === PORTADA === */
 .hero { position: relative; min-height: min(92vh, 900px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: var(--night); }
+/* el inicio ocupa la pantalla entera y queda quieto (fotos y texto): al bajar, la sección de
+   proyectos sube por encima y lo va tapando, así se siguen viendo las casas un tramo más */
+.hero-home { position: sticky; top: 0; z-index: 0; min-height: 0; height: 100vh; height: 100svh; padding: 0; }
+.inicio-capas > .section-proyectos { position: relative; z-index: 1; background: var(--paper); border-radius: 22px 22px 0 0; box-shadow: 0 -18px 40px rgba(10, 10, 10, .22); }
 .hero-bg, .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center 42%; }
-.hero-slide { opacity: 0; transition: opacity 1.4s ease; }
+.hero-slide { opacity: 0; transition: opacity 1.6s ease; filter: var(--tono, none); }   /* --tono: iguala la luz de cada foto para que la portada se vea pareja, como un video */
 .hero-slide.active { opacity: 1; }
+/* portada del inicio: cada foto se desliza despacio hacia el costado mientras se ve, como un video,
+   y cruza a la siguiente (el script le pone la clase "mov" en su turno); una va y la otra vuelve */
+@media (prefers-reduced-motion: no-preference) {
+    .hero-home .hero-slide { inset: 0 -3%; will-change: transform; }
+    .hero-home .hero-slide.mov { animation: hero-pan 8s linear forwards; }
+    .hero-home .hero-slide.mov:nth-child(even) { animation-name: hero-pan-vuelta; }
+}
+@keyframes hero-pan { from { transform: translateX(-2.2%); } to { transform: translateX(2.2%); } }
+@keyframes hero-pan-vuelta { from { transform: translateX(2.2%); } to { transform: translateX(-2.2%); } }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.15) 45%, rgba(10,10,10,0) 70%), linear-gradient(180deg, rgba(10,10,10,.45) 0%, rgba(10,10,10,.05) 30%, rgba(10,10,10,.25) 55%, rgba(10,10,10,.85) 100%); }
 /* portada del barrio: la vista aérea es muy clara (calle de piedras), el velo es más fuerte del lado del texto */
 .hero-aereo .hero-overlay { background: linear-gradient(90deg, rgba(10,10,10,.78) 0%, rgba(10,10,10,.5) 45%, rgba(10,10,10,.12) 80%), linear-gradient(180deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.1) 30%, rgba(10,10,10,.3) 60%, rgba(10,10,10,.85) 100%); }
@@ -229,6 +243,8 @@ button { font-family: inherit; }
 .hero-tag::before { content: ''; width: 28px; height: 2px; background: currentColor; }
 .hero-title { font-size: clamp(42px, 8vw, 108px); font-weight: 800; letter-spacing: -.02em; line-height: .95; text-transform: uppercase; margin-bottom: 26px; }
 .hero-title em { color: rgba(255,255,255,.62); }
+/* portada del inicio: una sola frase en tamaño medio, como titular (sin mayúsculas) */
+.hero-title.hero-frase { max-width: 18em; font-size: clamp(25px, 3.5vw, 48px); font-weight: 400; letter-spacing: -.01em; line-height: 1.18; text-transform: none; margin-bottom: 34px; }
 .hero-sub { font-size: clamp(16px, 1.6vw, 19px); color: #ECEBE8; max-width: 46ch; margin-bottom: 34px; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero .btn-primary { background: #fff; color: var(--ink); }
@@ -313,10 +329,17 @@ section { padding: 110px 0; }
 
 /* Nosotros */
 /* arriba el título a la izquierda y el texto a la derecha; abajo la foto del equipo a todo el ancho y los datos */
-.nosotros-foto { position: relative; margin: 44px 0 0; aspect-ratio: 5 / 2; border-radius: var(--radius); overflow: hidden; background: var(--sand); }
-.nosotros-foto img { width: 100%; height: 100%; object-fit: cover; }
+.nosotros-foto { position: relative; margin: 44px 0 0; aspect-ratio: 2 / 1; border-radius: var(--radius); overflow: hidden; background: var(--sand); }
+.nosotros-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+/* nombres debajo de la foto: cada columna queda centrada debajo de la persona (izquierda, centro, derecha) */
+.equipo { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 24px 14% 6px; text-align: center; }
+.equipo b { display: block; font: 600 clamp(17px, 1.7vw, 22px)/1.25 var(--f-display); color: var(--ink); }
+.equipo span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+.equipo span + span { margin-top: 2px; }
 .foto-pendiente { position: absolute; inset: 14px; display: grid; place-content: center; justify-items: center; gap: 12px; border: 1.5px dashed rgba(107, 105, 100, .4); border-radius: var(--radius); color: var(--muted); font: 600 12px var(--f-label); letter-spacing: .16em; text-transform: uppercase; }
-.nosotros-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: end; }
+.section-nosotros { padding-top: 40px; }
+.nosotros-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.nosotros-body { padding-top: 30px; }   /* el texto arranca a la altura del título, no del rótulo */
 .nosotros-head h2 { font-size: clamp(34px, 4.2vw, 52px); margin-bottom: 0; }
 .nosotros-body p { color: var(--muted); font-size: 17px; margin-bottom: 16px; max-width: 58ch; }
 .nosotros-body p:last-child { margin-bottom: 0; }
@@ -871,6 +894,10 @@ section { padding: 110px 0; }
     .fg-row { grid-template-columns: minmax(0, 1fr); }
     .nosotros-stats, .pc-facts { grid-template-columns: minmax(0, 1fr); }
     .nosotros-foto { aspect-ratio: 3 / 2; margin-top: 32px; }
+    .nosotros-body { padding-top: 0; }
+    .equipo { padding: 18px 0 4px; gap: 8px; }
+    .equipo b { font-size: 15px; }
+    .equipo span { font-size: 12px; line-height: 1.35; }
     .stat-item + .stat-item, .pc-facts div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); }
     .pc-facts div { padding: 12px 0; }
     .viewer-stage { padding: 0 6px; }

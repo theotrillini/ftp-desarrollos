@@ -63,14 +63,24 @@ window.addEventListener('scroll', () => {
 });
 
 // --- Hero slideshow ---
+// cada foto entra con un fundido y se desliza hacia el costado mientras se ve (clase "mov");
+// las fotos se cargan de a una, justo antes de su turno (data-bg), para que la portada abra rápido
 const slides = document.querySelectorAll('.hero-slide');
 if (slides.length > 0) {
     let current = 0;
+    const cargar = s => { if (s.dataset.bg) { s.style.backgroundImage = `url('${s.dataset.bg}')`; delete s.dataset.bg; } };
+    slides[0].classList.add('mov');
+    cargar(slides[1 % slides.length]);
     setInterval(() => {
-        slides[current].classList.remove('active');
+        const antes = slides[current];
         current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, 5000);
+        const ahora = slides[current];
+        cargar(ahora);
+        ahora.classList.add('active', 'mov');
+        antes.classList.remove('active');
+        setTimeout(() => antes.classList.remove('mov'), 1800);   // sigue moviéndose mientras se desvanece
+        cargar(slides[(current + 1) % slides.length]);
+    }, 6000);
 }
 
 // --- Hamburger ---
