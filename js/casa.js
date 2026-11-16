@@ -8,13 +8,13 @@
     const fotos = galleries[uf] || [];
     const nombres = FOTOS[uf] || [];
 
-    document.title = `UF ${n} · Lote ${c.lote} | Barrio Los Ginkgos | FTP Desarrollos`;
+    document.title = `UF ${n} | Barrio Los Ginkgos | FTP Desarrollos`;
     const wa = 'https://wa.me/5491140283277?text=' + encodeURIComponent(`Hola! Me interesa la UF ${n} del Barrio Los Ginkgos. ¿Podrían darme más información?`);
     ['navWa', 'ciWa', 'waFloat'].forEach(id => { $(id).href = wa; });
 
     /* Portada y datos */
     $('heroBg').style.backgroundImage = `url('${fotos[0]}')`;
-    $('heroTag').textContent = `Barrio Los Ginkgos · Lote ${c.lote}`;
+    $('heroTag').textContent = `Barrio Los Ginkgos · Muñiz`;
     $('heroTitle').innerHTML = `UF ${n}`;
     $('heroSub').innerHTML = `<span class="${c.estado[1]}">${c.estado[0]}</span> ${c.resumen}`;
     $('facts').innerHTML = c.specs.map(([v, l]) => `<div><dt>${l}</dt><dd>${v}</dd></div>`).join('') + `<div><dt>Estado</dt><dd class="dd-txt">${c.estado[0]}</dd></div>`;
@@ -107,7 +107,7 @@
     /* Otras casas */
     $('otras').innerHTML = Object.keys(CASAS).filter(k => k !== uf).map(k => {
         const o = CASAS[k];
-        return `<a href="casa.html?uf=${k}" class="otra"><img src="${galleries[k][0]}" alt="" loading="lazy"><div><span class="${o.estado[1]}">${o.estado[0]}</span><b>UF ${k.replace('uf', '')}</b><small>Lote ${o.lote}</small></div></a>`;
+        return `<a href="casa.html?uf=${k}" class="otra"><img src="${galleries[k][0]}" alt="" loading="lazy"><div><span class="${o.estado[1]}">${o.estado[0]}</span><b>UF ${k.replace('uf', '')}</b><small>Barrio Los Ginkgos</small></div></a>`;
     }).join('');
 
     /* Ubicación: el plano del barrio marca este lote */
