@@ -140,7 +140,7 @@
         const [, , est, det, sup, fr, uf] = LOTES[n - 1];
         svg.querySelectorAll('.mp-lot').forEach(g => g.classList.toggle('on', +g.dataset.n === n));
         const esUF = nombre(n) === 'UF';
-        const wa = 'https://wa.me/5491159951188?text=' + encodeURIComponent(`Hola! Me interesa ${esUF ? 'la UF' : 'el lote'} ${n} del Barrio Los Ginkgos.`);
+        const wa = 'https://wa.me/5491140283277?text=' + encodeURIComponent(`Hola! Me interesa ${esUF ? 'la UF' : 'el lote'} ${n} del Barrio Los Ginkgos.`);
         card.dataset.casa = uf || '';
         card.innerHTML =
             `<span class="mp-chip ${ESTADOS[est][1]}">${ESTADOS[est][0]}</span>` +

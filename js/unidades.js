@@ -18,7 +18,7 @@
 
     detalles.innerHTML = orden.map(uf => {
         const c = CASAS[uf], n = uf.replace('uf', ''), fotos = galleries[uf] || [], nombres = FOTOS[uf] || [];
-        const wa = 'https://wa.me/5491159951188?text=' + encodeURIComponent(`Hola! Me interesa la UF ${n} del Barrio Los Ginkgos. ¿Podrían darme más información?`);
+        const wa = 'https://wa.me/5491140283277?text=' + encodeURIComponent(`Hola! Me interesa la UF ${n} del Barrio Los Ginkgos. ¿Podrían darme más información?`);
         return `<div class="uf-detail" id="detail-${uf}"><div class="uf-detail-inner${c.venta ? '' : ' ufd-vendida'}">` +
             `<div class="ufd-header"><div><span class="${c.estado[1]}">${c.estado[0]}</span><h3>Unidad Funcional ${n}</h3></div></div>` +
             `<div class="ufd-body"><div class="uf-gallery">` +

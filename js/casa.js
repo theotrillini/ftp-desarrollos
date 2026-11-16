@@ -9,7 +9,7 @@
     const nombres = FOTOS[uf] || [];
 
     document.title = `UF ${n} · Lote ${c.lote} | Barrio Los Ginkgos | FTP Desarrollos`;
-    const wa = 'https://wa.me/5491159951188?text=' + encodeURIComponent(`Hola! Me interesa la UF ${n} del Barrio Los Ginkgos. ¿Podrían darme más información?`);
+    const wa = 'https://wa.me/5491140283277?text=' + encodeURIComponent(`Hola! Me interesa la UF ${n} del Barrio Los Ginkgos. ¿Podrían darme más información?`);
     ['navWa', 'ciWa', 'waFloat'].forEach(id => { $(id).href = wa; });
 
     /* Portada y datos */
