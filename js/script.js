@@ -57,10 +57,20 @@ const pintarNav = () => navbar.classList.toggle('scrolled', window.scrollY > 50
 window.addEventListener('scroll', pintarNav);
 
 // --- Hero parallax ---
-const heroBg = document.querySelector('.hero-bg');
+// (no en las portadas que quedan fijas, donde el fondo bajaría y dejaría una franja oscura arriba)
+const heroBg = document.querySelector('.hero-bg:not(.inicio-capas .hero-bg)');
 window.addEventListener('scroll', () => {
     if (heroBg) heroBg.style.transform = `translateY(${window.scrollY * 0.28}px)`;
 });
+
+// --- Portada fija: si es más alta que la pantalla, primero baja hasta mostrar su borde inferior y recién ahí queda quieta ---
+const heroFija = document.querySelector('.inicio-capas > .hero');
+if (heroFija) {
+    const ajustarTope = () => { heroFija.style.top = Math.min(0, innerHeight - heroFija.offsetHeight) + 'px'; };
+    addEventListener('resize', ajustarTope);
+    addEventListener('load', ajustarTope);
+    ajustarTope();
+}
 
 // --- Hero slideshow ---
 // cada foto entra con un fundido y se desliza hacia el costado mientras se ve (clase "mov");

@@ -219,8 +219,12 @@ button { font-family: inherit; }
 .hero { position: relative; min-height: min(92vh, 900px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: var(--night); }
 /* el inicio ocupa la pantalla entera y queda quieto (fotos y texto): al bajar, la sección de
    proyectos sube por encima y lo va tapando, así se siguen viendo las casas un tramo más */
-.hero-home { position: sticky; top: 0; z-index: 0; min-height: 0; height: 100vh; height: 100svh; padding: 0; }
-.inicio-capas > .section-proyectos { position: relative; z-index: 1; background: var(--paper); border-radius: 22px 22px 0 0; box-shadow: 0 -18px 40px rgba(10, 10, 10, .22); }
+.hero-home { min-height: 0; height: 100vh; height: 100svh; padding: 0; }
+/* efecto "sobre" en todas las páginas: la portada queda quieta y la sección siguiente sube tapándola */
+.inicio-capas > .hero { position: sticky; top: 0; z-index: 0; }
+.inicio-capas > :not(.hero) { position: relative; z-index: 1; background-color: var(--paper); }
+.inicio-capas > .section-recorrido-casa { background-color: var(--paper-2); }
+.inicio-capas > .hero + :not([hidden]), .inicio-capas > .hero + [hidden] + * { border-radius: 22px 22px 0 0; box-shadow: 0 -18px 40px rgba(10, 10, 10, .22); }
 .hero-bg, .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center 42%; }
 .hero-slide { opacity: 0; transition: opacity 1.6s ease; filter: var(--tono, none); }   /* --tono: iguala la luz de cada foto para que la portada se vea pareja, como un video */
 .hero-slide.active { opacity: 1; }
