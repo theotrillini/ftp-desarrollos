@@ -81,9 +81,9 @@
     // Nombres de calles, acceso y norte
     const az = rot(-25, AZ + 9.4);
     s += `<text x="${az[0]}" y="${az[1]}" class="mp-street-name" transform="rotate(${DEG.toFixed(1)} ${az[0]} ${az[1]})">CALLE AZCUÉNAGA</text>`;
-    // al fondo (lotes 5 y 11) limita con el Barrio Las Acacias
+    // al fondo (lotes 5 y 11) limita con Praderas de San Ignacio
     const ac = rot(0, -9);
-    s += `<text x="${ac[0]}" y="${ac[1]}" class="mp-street-name" transform="rotate(${DEG.toFixed(1)} ${ac[0]} ${ac[1]})">BARRIO LAS ACACIAS</text>`;
+    s += `<text x="${ac[0]}" y="${ac[1]}" class="mp-street-name" transform="rotate(${DEG.toFixed(1)} ${ac[0]} ${ac[1]})">PRADERAS DE SAN IGNACIO</text>`;
     const ci = rot(0, 20);
     s += `<text x="${ci[0]}" y="${ci[1]}" class="mp-street-name" transform="rotate(${(DEG + 90).toFixed(1)} ${ci[0]} ${ci[1]})">CALLE INTERNA</text>`;
     const f1 = rot(0, AZ + 11), f2 = rot(0, AZ - 7), fa = rot(-2.4, AZ - 3.5), fb = rot(2.4, AZ - 3.5), fl = rot(3.4, AZ - 10);
